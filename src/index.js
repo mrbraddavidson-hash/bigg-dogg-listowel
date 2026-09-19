@@ -59,7 +59,7 @@ async function handleFacebookFeed(request, env, ctx) {
   const accessToken = env.FACEBOOK_PAGE_ACCESS_TOKEN;
 
   if (!accessToken) {
-    return jsonResponse({ ok: false, configured: false, error: "Facebook feed is not configured yet." }, 503);
+    return jsonResponse({ ok: false, configured: false, error: "Facebook feed is not configured yet." }, 200);
   }
 
   const cacheKey = new Request(new URL("/api/facebook-feed", request.url).toString(), { method: "GET" });

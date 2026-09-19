@@ -234,6 +234,10 @@
   font-size: 10px;
   font-weight: 950;
 }
+.social-updates-kicker,
+.feed-status a,
+.feed-post-meta,
+.feed-post-link { color: #b51e24; }
 @media (width <= 600px) {
   .facebook-feed { padding: 12px; }
   .feed-status { min-height: 290px; padding: 22px; }
