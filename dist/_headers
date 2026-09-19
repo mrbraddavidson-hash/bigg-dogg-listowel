@@ -3,5 +3,5 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), geolocation=(), microphone=()
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self'; style-src 'self'; script-src 'none'; object-src 'none'; connect-src 'self'; font-src 'self'
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
   Strict-Transport-Security: max-age=31536000; includeSubDomains

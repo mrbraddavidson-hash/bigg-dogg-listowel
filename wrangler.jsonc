@@ -1,12 +1,19 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "bigg-dogg-listowel",
-  "compatibility_date": "2026-09-18",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-19",
   "observability": {
     "enabled": true
   },
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "FACEBOOK_PAGE_ID": "61550663527060",
+    "FACEBOOK_GRAPH_VERSION": "v25.0"
   }
 }
