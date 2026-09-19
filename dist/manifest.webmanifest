@@ -1,0 +1,16 @@
+{
+  "name": "BIGG DOGG — Listowel Street Eats",
+  "short_name": "BIGG DOGG",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#161514",
+  "theme_color": "#e51e2a",
+  "description": "Smash burgers and street eats in Listowel, Ontario.",
+  "icons": [
+    {
+      "src": "/images/logo-clean.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

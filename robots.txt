@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bigg-dogg-listowel.mrbraddavidson.workers.dev/sitemap.xml

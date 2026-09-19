@@ -1,0 +1,30 @@
+# Bigg Dogg — Listowel Street Eats
+
+> Website concept for Bigg Dogg, a Listowel, Ontario food truck serving burgers, fish and chips, poutine, loaded fries, chicken tenders, sausages, hot dogs and other street eats.
+
+## About
+- Location: Canadian Tire parking lot, 500 Mitchell Road South, Listowel, Ontario
+- Typical hours shown in the concept: Monday-Saturday, 11:00 AM-7:00 PM; Sunday closed
+- Ordering shown in the concept: call or text 647-679-5006
+- Social links: [Facebook](https://www.facebook.com/61550663527060/) and [Instagram](https://www.instagram.com/bigg_dogg2023/)
+
+## Menu shown in the concept
+- Original Smash Burger: $9.50; combo: $14.50
+- Haddock Fish & Chips: $16.00
+- Loaded Fries / Poutine: $10.50
+- Chicken Tenders: $8.00; combo: $12.50
+- Hot Dog: $7.00
+- Chili Dog: $8.00
+- Cajun, Polish or Oktoberfest sausage: $8.00
+- Battered Mushrooms: $8.00
+- Onion Rings: $8.50
+- Loaded Nachos: $10.50
+- Side gravy: $2.75
+- Pop or water: $2.00
+- Combo upgrade: +$5.00
+
+## Website
+- [Bigg Dogg website concept](https://bigg-dogg-listowel.mrbraddavidson.workers.dev/)
+
+## Verification
+This is an unofficial website concept. Confirm current menu, hours, phone number, location, social links and image permissions with Bigg Dogg before treating this information as official.
