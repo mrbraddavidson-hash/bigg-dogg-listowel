@@ -16,7 +16,7 @@ The deployment uses `dist/` as its public asset directory. The source copy is ke
 
 ## Facebook updates
 
-The page includes a server-side Facebook feed. The owner can keep posting from Facebook normally; the Worker polls the Page's recent posts, caches the response briefly, and renders the latest public posts as branded cards. The Page access token stays in Wrangler's secret store and is never sent to the browser.
+The public Facebook updates section is currently paused while Page access is being arranged. The server-side feed endpoint remains in the Worker so it can be re-enabled later without redesigning the site.
 
 One-time production setup:
 
@@ -24,7 +24,7 @@ One-time production setup:
 npx.cmd --yes wrangler@latest secret put FACEBOOK_PAGE_ACCESS_TOKEN
 ```
 
-Paste a Page access token with permission to read the Page's posts when Wrangler prompts. Until that secret is set, the site shows a direct link to the Facebook Page instead of an empty feed.
+Paste a Page access token with permission to read the Page's posts when Wrangler prompts, then restore the feed markup and script in `index.html` when the owner is ready.
 
 ## Verify before official publication
 
