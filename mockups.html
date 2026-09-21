@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIGG DOGG — Five redesign directions</title>
+  <style>
+    :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #080808; color: #f7eadb; }
+    a { color: inherit; text-decoration: none; }
+    .preview-bar { position: sticky; z-index: 20; top: 0; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding: 12px 22px; background: #080808; border-bottom: 2px solid #f4c638; text-transform: uppercase; letter-spacing: .1em; font-size: 11px; font-weight: 900; }
+    .preview-bar nav { display: flex; flex-wrap: wrap; gap: 6px; }
+    .preview-bar nav a { padding: 8px 10px; background: #202020; color: #f4c638; }
+    .preview-bar nav a:hover { background: #ef302f; color: white; }
+    .concept { --bg:#111; --surface:#f6ecdc; --ink:#111; --accent:#ed302f; --accent2:#f4c638; --muted:#c1b5a7; --display:Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; position: relative; overflow: hidden; max-width: 1440px; margin: 26px auto; padding: 24px clamp(20px, 5vw, 76px) 74px; background: var(--bg); color: var(--ink); }
+    .concept::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .1; background-image: linear-gradient(90deg, #fff 1px, transparent 1px), linear-gradient(#fff 1px, transparent 1px); background-size: 72px 72px; }
+    .concept > * { position: relative; z-index: 1; }
+    .concept-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; color: var(--accent2); text-transform: uppercase; letter-spacing: .14em; font-size: 10px; font-weight: 900; }
+    .concept-meta b { color: var(--ink); background: var(--accent2); padding: 7px 10px; }
+    .concept-head { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 18px; border-bottom: 1px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+    .concept-head strong { font-family: var(--display); font-size: 30px; letter-spacing: .04em; }
+    .concept-head strong em { color: var(--accent); font-style: normal; }
+    .concept-head nav { display: flex; gap: 20px; text-transform: uppercase; letter-spacing: .1em; font-size: 10px; font-weight: 900; }
+    .concept-head nav a:last-child { color: var(--accent); }
+    .hero { display: grid; grid-template-columns: .88fr 1.12fr; gap: clamp(24px, 6vw, 90px); align-items: stretch; padding: clamp(46px, 8vw, 100px) 0 58px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: .15em; font-size: 11px; font-weight: 900; }
+    .eyebrow::before { content: ""; width: 28px; height: 4px; background: var(--accent); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 680px; margin-bottom: 24px; font-family: var(--display); font-size: clamp(68px, 10vw, 160px); line-height: .78; letter-spacing: -.045em; text-transform: uppercase; }
+    h1 em, h2 em { color: var(--accent); font-style: normal; }
+    .hero-copy > p:not(.eyebrow) { max-width: 520px; color: color-mix(in srgb, var(--ink) 72%, transparent); font-size: 18px; line-height: 1.55; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 15px 19px; background: var(--accent); color: white; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 900; box-shadow: 5px 5px 0 var(--accent2); }
+    .button.secondary { background: transparent; color: var(--ink); border: 1px solid color-mix(in srgb, var(--ink) 35%, transparent); box-shadow: none; }
+    .hero-media { min-height: 480px; position: relative; overflow: hidden; background: var(--surface); }
+    .hero-media img { width: 100%; height: 100%; min-height: 480px; object-fit: cover; }
+    .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, #0009); }
+    .hero-label { position: absolute; z-index: 1; left: 22px; bottom: 20px; padding: 12px 15px; background: var(--accent2); color: var(--ink); font-family: var(--display); font-size: 26px; text-transform: uppercase; transform: rotate(-2deg); }
+    .feature-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 0 0 58px; background: var(--ink); color: var(--surface); }
+    .feature-strip span { padding: 14px 12px; text-align: center; text-transform: uppercase; letter-spacing: .08em; font-size: 10px; font-weight: 900; }
+    .feature-strip span:nth-child(2n) { color: var(--accent2); }
+    .story { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(28px, 7vw, 100px); padding: 58px 0; border-top: 1px solid color-mix(in srgb, var(--ink) 24%, transparent); }
+    .story h2 { max-width: 540px; margin-bottom: 18px; font-family: var(--display); font-size: clamp(54px, 7vw, 106px); line-height: .82; text-transform: uppercase; }
+    .story-lede { max-width: 650px; font-size: clamp(22px, 3vw, 34px); font-weight: 800; line-height: 1.08; }
+    .story p:not(.eyebrow):not(.story-lede) { max-width: 680px; color: color-mix(in srgb, var(--ink) 72%, transparent); line-height: 1.65; }
+    .story-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+    .story-proof div { padding-top: 12px; border-top: 4px solid var(--accent); text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 900; }
+    .story-proof strong { display: block; margin-bottom: 5px; font-family: var(--display); font-size: 29px; letter-spacing: 0; }
+    .menu-block { padding: 58px 0; }
+    .menu-head { display: flex; justify-content: space-between; align-items: end; gap: 22px; margin-bottom: 26px; }
+    .menu-head h2 { margin: 0; font-family: var(--display); font-size: clamp(56px, 7vw, 112px); line-height: .8; text-transform: uppercase; }
+    .menu-head p { max-width: 340px; margin: 0; color: color-mix(in srgb, var(--ink) 68%, transparent); line-height: 1.5; }
+    .menu-order { min-width: 238px; padding: 17px 19px; background: var(--ink); color: var(--surface); border-top: 5px solid var(--accent); }
+    .menu-order span { display: block; color: var(--accent2); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 900; }
+    .menu-order strong { display: block; margin: 5px 0 7px; font-family: var(--display); font-size: 27px; line-height: 1; }
+    .menu-order a { color: var(--accent2); text-transform: uppercase; letter-spacing: .1em; font-size: 10px; font-weight: 900; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .menu-item { overflow: hidden; background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+    .menu-item img { width: 100%; height: 185px; object-fit: cover; }
+    .menu-item-copy { padding: 17px; }
+    .menu-item-copy small { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 900; }
+    .menu-item-copy h3 { margin: 8px 0; font-family: var(--display); font-size: 28px; line-height: .9; text-transform: uppercase; }
+    .menu-item-copy p { min-height: 55px; margin-bottom: 15px; color: color-mix(in srgb, var(--ink) 66%, transparent); font-size: 13px; line-height: 1.45; }
+    .price { display: flex; justify-content: space-between; align-items: end; padding-top: 13px; border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+    .price strong { color: var(--accent); font-family: var(--display); font-size: 34px; line-height: .8; }
+    .price span { padding: 6px 7px; background: var(--accent2); color: var(--ink); text-transform: uppercase; letter-spacing: .08em; font-size: 9px; font-weight: 900; }
+    .order-band { display: flex; justify-content: space-between; align-items: center; gap: 22px; margin-top: 28px; padding: 23px; background: var(--accent); color: white; }
+    .order-band span { display: block; text-transform: uppercase; letter-spacing: .14em; font-size: 9px; font-weight: 900; }
+    .order-band strong { display: block; font-family: var(--display); font-size: clamp(26px, 4vw, 52px); line-height: .9; }
+    .order-band .button { background: var(--accent2); color: var(--ink); box-shadow: none; }
+    .closing { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding-top: 58px; }
+    .closing-card { min-height: 245px; padding: 26px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+    .closing-card.dark { background: var(--ink); color: var(--surface); border: 0; }
+    .closing-card h3 { margin: 0 0 14px; font-family: var(--display); font-size: 39px; line-height: .85; text-transform: uppercase; }
+    .closing-card p { max-width: 470px; color: color-mix(in srgb, var(--ink) 70%, transparent); line-height: 1.55; }
+    .closing-card.dark p { color: color-mix(in srgb, var(--surface) 70%, transparent); }
+    .closing-card .button { margin-top: 10px; }
+    .c1 { --bg:#11100f; --surface:#f4eadb; --ink:#f4eadb; --accent:#ef3030; --accent2:#f4c638; --muted:#b9b0a2; }
+    .c1 .story, .c1 .menu-block { border-color: #ffffff35; }
+    .c1 .story p:not(.eyebrow):not(.story-lede), .c1 .menu-head p, .c1 .hero-copy > p:not(.eyebrow) { color: #c4baac; }
+    .c1 .menu-item, .c1 .closing-card { background: #f4eadb; color: #11100f; }
+    .c2 { --bg:#f1e0c7; --surface:#fff9ee; --ink:#2c211b; --accent:#c82d2d; --accent2:#e5ac2c; --display:Georgia, "Times New Roman", serif; }
+    .c2::before { opacity: .05; background-size: 18px 18px; }
+    .c2 .concept-head { border-bottom: 3px double #2c211b55; }
+    .c2 .hero-media { border: 14px solid var(--surface); transform: rotate(1deg); }
+    .c2 h1, .c2 .story h2, .c2 .menu-head h2, .c2 .closing-card h3 { font-weight: 900; letter-spacing: -.07em; }
+    .c2 .feature-strip { border: 7px solid var(--ink); }
+    .c2 .menu-item { border: 2px solid var(--ink); box-shadow: 5px 5px 0 var(--accent); }
+    .c2 .order-band { border: 5px solid var(--ink); }
+    .c3 { --bg:#0b1012; --surface:#182125; --ink:#f3f1e7; --accent:#ff4338; --accent2:#d8ff40; --display:Arial Black, Arial, sans-serif; }
+    .c3::before { opacity: .14; background-size: 30px 30px; }
+    .c3 .concept-head, .c3 .story { border-color: #f3f1e744; }
+    .c3 .hero { grid-template-columns: 1fr; }
+    .c3 .hero-copy { max-width: 820px; }
+    .c3 .hero-media { min-height: 310px; }
+    .c3 .hero-media img { min-height: 310px; }
+    .c3 .menu-grid { grid-template-columns: repeat(4, 1fr); }
+    .c3 .menu-item img { height: 125px; }
+    .c3 .menu-item-copy h3 { font-size: 22px; }
+    .c3 .story { grid-template-columns: 1fr 1fr; }
+    .c3 .story > div:first-child { grid-column: 1 / -1; }
+    .c3 .story-proof { grid-template-columns: repeat(3, 1fr); }
+    .c3 .closing { grid-template-columns: 1.35fr .65fr; }
+    .c4 { --bg:#d8d9c8; --surface:#f4f0e4; --ink:#21352e; --accent:#c95738; --accent2:#e3ae32; --display:Georgia, "Times New Roman", serif; }
+    .c4::before { opacity: .07; background-size: 11px 11px; }
+    .c4 .concept-head strong { font-family: Arial, sans-serif; font-weight: 900; }
+    .c4 .hero-media { border-radius: 50% 50% 6px 6px; }
+    .c4 .hero-media img { border-radius: inherit; }
+    .c4 h1, .c4 .story h2, .c4 .menu-head h2, .c4 .closing-card h3 { font-weight: 900; }
+    .c4 .feature-strip { border-radius: 999px; overflow: hidden; }
+    .c4 .menu-item { border-radius: 14px; }
+    .c4 .menu-item img { height: 210px; }
+    .c4 .order-band { border-radius: 12px; }
+    .c5 { --bg:#172031; --surface:#223047; --ink:#f8e8cf; --accent:#ff413b; --accent2:#ffd047; --display:Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; }
+    .c5::before { opacity: .18; background-size: 54px 54px; }
+    .c5 .concept-head { border-bottom: 4px solid var(--accent2); }
+    .c5 .hero { grid-template-columns: 1.15fr .85fr; }
+    .c5 .hero-media { border: 7px solid var(--accent2); transform: rotate(-2deg); }
+    .c5 .hero-media img { filter: saturate(.8) contrast(1.12); }
+    .c5 .feature-strip { background: var(--accent2); color: var(--bg); }
+    .c5 .feature-strip span, .c5 .feature-strip span:nth-child(2n) { color: var(--bg); }
+    .c5 .menu-grid { grid-template-columns: 1fr 1fr; }
+    .c5 .menu-item { border: 2px solid var(--accent2); }
+    .c5 .menu-item img { height: 220px; }
+    .c5 .closing-card { border: 2px solid var(--accent2); }
+    @media (max-width: 850px) {
+      .concept-head nav { display: none; }
+      .hero, .story, .c3 .story { grid-template-columns: 1fr; }
+      .hero-media, .hero-media img { min-height: 350px; }
+      .menu-head { align-items: start; flex-direction: column; }
+      .menu-grid, .c3 .menu-grid, .c5 .menu-grid { grid-template-columns: repeat(2, 1fr); }
+      .closing, .c3 .closing { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .preview-bar { align-items: flex-start; flex-direction: column; }
+      .preview-bar nav { width: 100%; }
+      .preview-bar nav a { flex: 1; text-align: center; }
+      .concept { margin: 14px 0; padding: 18px 17px 55px; }
+      .concept-meta { align-items: flex-start; flex-direction: column; }
+      .concept-head strong { font-size: 24px; }
+      h1 { font-size: 68px; }
+      .hero { padding-top: 45px; }
+      .hero-media, .hero-media img { min-height: 290px; }
+      .feature-strip { grid-template-columns: repeat(2, 1fr); }
+      .story-proof { grid-template-columns: 1fr; }
+      .menu-grid, .c3 .menu-grid, .c5 .menu-grid { grid-template-columns: 1fr; }
+      .menu-item img { height: 220px; }
+      .order-band { align-items: flex-start; flex-direction: column; }
+      .order-band .button { width: 100%; }
+      .c4 .hero-media { border-width: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="preview-bar">
+    <strong>BIGG DOGG / 5 full redesign directions</strong>
+    <nav aria-label="Mockup directions">
+      <a href="#concept-1">01 Poster</a><a href="#concept-2">02 Diner</a><a href="#concept-3">03 Order</a><a href="#concept-4">04 Market</a><a href="#concept-5">05 Truck Stop</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="concept-1" class="concept c1">
+      <div class="concept-meta"><span>Direction 01 / Bigg Street Poster</span><b>Bold · loud · local</b></div>
+      <header class="concept-head"><strong>BIGG <em>DOGG</em></strong><nav><a href="#concept-1-story">Our story</a><a href="#concept-1-menu">Full menu</a><a href="#concept-1-order">Call to order</a></nav></header>
+      <section class="hero"><div class="hero-copy"><p class="eyebrow">Listowel, Ontario</p><h1>Street food<br>done <em>BIGG.</em></h1><p>Smash burgers, battered haddock, loaded fries and the kind of portions that make the stop worth the drive.</p><div class="buttons"><a class="button" href="#concept-1-menu">See the menu ↓</a><a class="button secondary" href="#concept-1-order">Call 647-679-5006</a></div></div><div class="hero-media"><img src="images/loaded-fries.jpg" alt="BIGG DOGG loaded fries and burger"><div class="hero-label">Home of the smash burger</div></div></section>
+      <div class="feature-strip"><span>Smash burgers</span><span>Fish &amp; chips</span><span>Loaded fries</span><span>Street eats</span></div>
+      <section id="concept-1-story" class="story"><div><p class="eyebrow">Our story</p><h2>Small truck.<br><em>BIGG</em> heart.</h2></div><div><p class="story-lede">Good food should feel like a local landmark.</p><p>BIGG DOGG is a locally owned family food truck serving hot, generous street eats in Listowel. Fresh off the grill, friendly at the window and built for the neighbourhood.</p><div class="story-proof"><div><strong>4.9 ★</strong>Google rating</div><div><strong>113</strong>Customer reviews</div><div><strong>LOCAL</strong>Family business</div></div></div></section>
+      <section id="concept-1-menu" class="menu-block"><div class="menu-head"><div><p class="eyebrow">Made to order · prices included</p><h2>Full menu.</h2></div><div class="menu-order"><span>Call or text to order</span><strong>647-679-5006</strong><a href="#concept-1-order">Order ahead ↗</a></div></div><div class="menu-grid"><article class="menu-item"><img src="images/smash-burger.jpg" alt="Original Smash Burger"><div class="menu-item-copy"><small>The original</small><h3>Original smash burger</h3><p>Crispy-edged beef, melted cheese, pickles, onions and house sauce.</p><div class="price"><strong>$9.50</strong><span>$14.50 combo</span></div></div></article><article class="menu-item"><img src="images/fish-and-chips.jpg" alt="Haddock Fish and Chips"><div class="menu-item-copy"><small>Fresh battered</small><h3>Haddock fish &amp; chips</h3><p>Freshly battered 6 oz haddock with a generous pile of golden fries.</p><div class="price"><strong>$16.00</strong><span>Full meal</span></div></div></article><article class="menu-item"><img src="images/poutine.jpg" alt="Loaded Fries and Poutine"><div class="menu-item-copy"><small>Fan favourite</small><h3>Loaded fries / poutine</h3><p>Golden fries piled high with gravy, cheese curds or loaded toppings.</p><div class="price"><strong>$10.50</strong><span>Big portion</span></div></div></article></div><div id="concept-1-order" class="order-band"><div><span>Ready when you are</span><strong>Call or text BIGG DOGG.</strong></div><a class="button" href="tel:+16476795006">647-679-5006 ↗</a></div></section>
+      <section class="closing"><div class="closing-card"><p class="eyebrow">Find us</p><h3>Canadian Tire parking lot.</h3><p>500 Mitchell Road South, Listowel. Monday–Saturday, 11 AM–7 PM.</p><a class="button" href="#concept-1-order">Get directions ↗</a></div><div class="closing-card dark"><p class="eyebrow">Catering</p><h3>Bring BIGG to the crowd.</h3><p>Work lunch, tournament, party or community event? Text the date, headcount and location.</p><a class="button" href="#concept-1-order">Text about catering ↗</a></div></section>
+    </section>
+
+    <section id="concept-2" class="concept c2">
+      <div class="concept-meta"><span>Direction 02 / Golden Hour Diner</span><b>Warm · familiar · craveable</b></div>
+      <header class="concept-head"><strong>BIGG <em>DOGG</em> <small>STREET EATS</small></strong><nav><a href="#concept-2-story">About</a><a href="#concept-2-menu">Menu</a><a href="#concept-2-order">Order</a></nav></header>
+      <section class="hero"><div class="hero-copy"><p class="eyebrow">Serving Listowel since the first bite</p><h1>Come hungry.<br>Leave <em>happy.</em></h1><p>A friendly roadside food stop with smash burgers, crisp fish and chips, loaded fries and generous portions.</p><div class="buttons"><a class="button" href="#concept-2-menu">View today’s menu</a><a class="button secondary" href="#concept-2-order">Find the truck</a></div></div><div class="hero-media"><img src="images/truck.jpg" alt="BIGG DOGG food truck in Listowel"><div class="hero-label">Listowel’s local food stop</div></div></section>
+      <div class="feature-strip"><span>Made fresh</span><span>Big portions</span><span>Local family</span><span>Call ahead</span></div>
+      <section id="concept-2-story" class="story"><div><p class="eyebrow">The BIGG DOGG story</p><h2>Real food.<br><em>Real welcome.</em></h2></div><div><p class="story-lede">The kind of place you tell your friends about.</p><p>Hot food, a familiar face and a menu that makes it easy to order. BIGG DOGG brings street eats to the Canadian Tire parking lot in Listowel.</p><div class="story-proof"><div><strong>HOT</strong>Made to order</div><div><strong>BIGG</strong>Generous portions</div><div><strong>LOCAL</strong>Listowel roots</div></div></div></section>
+      <section id="concept-2-menu" class="menu-block"><div class="menu-head"><div><p class="eyebrow">What are you having?</p><h2>Pick your plate.</h2></div><div class="menu-order"><span>Call or text your order</span><strong>647-679-5006</strong><a href="#concept-2-order">Make it a combo ↗</a></div></div><div class="menu-grid"><article class="menu-item"><img src="images/smash-burger.jpg" alt="Original Smash Burger"><div class="menu-item-copy"><small>Start here</small><h3>Original smash burger</h3><p>Crispy-edged beef, melted cheese, pickles, onions and house sauce.</p><div class="price"><strong>$9.50</strong><span>Combo $14.50</span></div></div></article><article class="menu-item"><img src="images/fish-and-chips.jpg" alt="Haddock Fish and Chips"><div class="menu-item-copy"><small>Fresh battered</small><h3>Haddock fish &amp; chips</h3><p>Six ounces of haddock and a generous pile of golden fries.</p><div class="price"><strong>$16.00</strong><span>Full meal</span></div></div></article><article class="menu-item"><img src="images/chicken-tenders.jpg" alt="Chicken Tenders"><div class="menu-item-copy"><small>For the table</small><h3>Chicken tenders</h3><p>Four crisp tenders made to order. Add fries and a drink.</p><div class="price"><strong>$8.00</strong><span>Combo $12.50</span></div></div></article></div><div id="concept-2-order" class="order-band"><div><span>Want it hot when you arrive?</span><strong>Call ahead. We’ll get you sorted.</strong></div><a class="button" href="tel:+16476795006">Call 647-679-5006</a></div></section>
+      <section class="closing"><div class="closing-card"><p class="eyebrow">Find us</p><h3>Canadian Tire parking lot.</h3><p>500 Mitchell Road South, Listowel. Monday–Saturday, 11 AM–7 PM.</p><a class="button" href="#concept-2-order">Get directions ↗</a></div><div class="closing-card dark"><p class="eyebrow">Catering</p><h3>Feed the whole pack.</h3><p>Ask about group service for lunches, tournaments, parties and community events.</p><a class="button" href="#concept-2-order">Text about catering ↗</a></div></section>
+    </section>
+
+    <section id="concept-3" class="concept c3">
+      <div class="concept-meta"><span>Direction 03 / Order First</span><b>Fast · clear · mobile-ready</b></div>
+      <header class="concept-head"><strong>BIGG <em>DOGG</em></strong><nav><a href="#concept-3-story">Why BIGG</a><a href="#concept-3-menu">Choose food</a><a href="#concept-3-order">Call now</a></nav></header>
+      <section class="hero"><div class="hero-copy"><p class="eyebrow">Listowel / call or text</p><h1>Decide fast.<br>Eat <em>BIGG.</em></h1><p>The menu, the phone number and the truck location in one quick stop.</p><div class="buttons"><a class="button" href="#concept-3-menu">Choose your food ↓</a><a class="button secondary" href="#concept-3-order">Call 647-679-5006</a></div></div><div class="hero-media"><img src="images/loaded-fries.jpg" alt="BIGG DOGG loaded fries"><div class="hero-label">Order ahead</div></div></section>
+      <div class="feature-strip"><span>01 Pick a main</span><span>02 Add extras</span><span>03 Call or text</span><span>04 Come hungry</span></div>
+      <section id="concept-3-story" class="story"><div><p class="eyebrow">Why BIGG DOGG</p><h2>Less fuss.<br><em>More food.</em></h2></div><div><p class="story-lede">Everything a hungry person needs, above the fold.</p><p>See the prices, check the hours, find the truck and call ahead without hunting through the page.</p><div class="story-proof"><div><strong>4.9 ★</strong>Google rating</div><div><strong>11–7</strong>Mon–Sat</div><div><strong>LOCAL</strong>Listowel</div></div></div></section>
+      <section id="concept-3-menu" class="menu-block"><div class="menu-head"><div><p class="eyebrow">Step 01 / choose a main</p><h2>Build your order.</h2></div><div class="menu-order"><span>Step 03 / call or text</span><strong>647-679-5006</strong><a href="#concept-3-order">Call now ↗</a></div></div><div class="menu-grid"><article class="menu-item"><img src="images/smash-burger.jpg" alt="Original Smash Burger"><div class="menu-item-copy"><small>01 / crowd favourite</small><h3>Original smash burger</h3><p>Crispy-edged beef, melted cheese, pickles, onions and house sauce.</p><div class="price"><strong>$9.50</strong><span>Combo $14.50</span></div></div></article><article class="menu-item"><img src="images/fish-and-chips.jpg" alt="Haddock Fish and Chips"><div class="menu-item-copy"><small>02 / full meal</small><h3>Haddock fish &amp; chips</h3><p>Freshly battered haddock with golden fries.</p><div class="price"><strong>$16.00</strong><span>Full meal</span></div></div></article><article class="menu-item"><img src="images/poutine.jpg" alt="Loaded Fries and Poutine"><div class="menu-item-copy"><small>03 / big portion</small><h3>Loaded fries / poutine</h3><p>Fries piled high with gravy, curds or loaded toppings.</p><div class="price"><strong>$10.50</strong><span>Big portion</span></div></div></article><article class="menu-item"><img src="images/chicken-tenders.jpg" alt="Chicken Tenders"><div class="menu-item-copy"><small>04 / crunchy</small><h3>Chicken tenders</h3><p>Four crisp tenders. Add fries and a drink.</p><div class="price"><strong>$8.00</strong><span>Combo $12.50</span></div></div></article></div><div id="concept-3-order" class="order-band"><div><span>Step 03 / call or text</span><strong>Your order starts here.</strong></div><a class="button" href="tel:+16476795006">647-679-5006 ↗</a></div></section>
+      <section class="closing"><div class="closing-card"><p class="eyebrow">Find us</p><h3>Canadian Tire parking lot.</h3><p>500 Mitchell Road South, Listowel. Monday–Saturday, 11 AM–7 PM.</p><a class="button" href="#concept-3-order">Directions ↗</a></div><div class="closing-card dark"><p class="eyebrow">Catering</p><h3>Need group service?</h3><p>Text your date, headcount and location to ask about the truck.</p><a class="button" href="#concept-3-order">Text catering ↗</a></div></section>
+    </section>
+
+    <section id="concept-4" class="concept c4">
+      <div class="concept-meta"><span>Direction 04 / Local Market</span><b>Friendly · handmade · community-first</b></div>
+      <header class="concept-head"><strong>BIGG <em>DOGG</em> <small>LISTOWEL, ON</small></strong><nav><a href="#concept-4-story">Our people</a><a href="#concept-4-menu">Menu</a><a href="#concept-4-order">Visit</a></nav></header>
+      <section class="hero"><div class="hero-copy"><p class="eyebrow">A local stop worth making</p><h1>Good food.<br><em>Good people.</em></h1><p>Street food with a neighbourhood feel: smash burgers, haddock, poutine and a warm welcome at the truck.</p><div class="buttons"><a class="button" href="#concept-4-menu">See what’s cooking</a><a class="button secondary" href="#concept-4-order">Find us today</a></div></div><div class="hero-media"><img src="images/truck.jpg" alt="BIGG DOGG food truck"><div class="hero-label">Made in Listowel</div></div></section>
+      <div class="feature-strip"><span>Hot &amp; fresh</span><span>Local family</span><span>Generous portions</span><span>Come hungry</span></div>
+      <section id="concept-4-story" class="story"><div><p class="eyebrow">Our people</p><h2>Small truck.<br><em>BIGG</em> heart.</h2></div><div><p class="story-lede">A family food truck serving the town one hungry customer at a time.</p><p>BIGG DOGG is locally owned and made to order in Listowel. The menu is straightforward, the portions are generous and the stop is always worth the trip.</p><div class="story-proof"><div><strong>4.9 ★</strong>Google rating</div><div><strong>113</strong>Customer reviews</div><div><strong>LOCAL</strong>Family business</div></div></div></section>
+      <section id="concept-4-menu" class="menu-block"><div class="menu-head"><div><p class="eyebrow">Made with care</p><h2>From our truck.</h2></div><div class="menu-order"><span>Call or text ahead</span><strong>647-679-5006</strong><a href="#concept-4-order">Plan your stop ↗</a></div></div><div class="menu-grid"><article class="menu-item"><img src="images/smash-burger.jpg" alt="Original Smash Burger"><div class="menu-item-copy"><small>Fresh off the grill</small><h3>Original smash burger</h3><p>Crispy-edged beef, cheese, pickles, onions and house sauce.</p><div class="price"><strong>$9.50</strong><span>Combo $14.50</span></div></div></article><article class="menu-item"><img src="images/fish-and-chips.jpg" alt="Haddock Fish and Chips"><div class="menu-item-copy"><small>Fresh battered</small><h3>Haddock fish &amp; chips</h3><p>Six ounces of haddock with golden fries.</p><div class="price"><strong>$16.00</strong><span>Full meal</span></div></div></article><article class="menu-item"><img src="images/poutine.jpg" alt="Loaded Fries and Poutine"><div class="menu-item-copy"><small>Made for sharing</small><h3>Loaded fries / poutine</h3><p>Golden fries, gravy, curds and loaded toppings.</p><div class="price"><strong>$10.50</strong><span>Big portion</span></div></div></article></div><div id="concept-4-order" class="order-band"><div><span>Visit us in Listowel</span><strong>Call or text before you go.</strong></div><a class="button" href="tel:+16476795006">647-679-5006 ↗</a></div></section>
+      <section class="closing"><div class="closing-card"><p class="eyebrow">Find us</p><h3>Canadian Tire parking lot.</h3><p>500 Mitchell Road South, Listowel. Monday–Saturday, 11 AM–7 PM.</p><a class="button" href="#concept-4-order">Get directions ↗</a></div><div class="closing-card dark"><p class="eyebrow">Catering</p><h3>Bring the truck to your event.</h3><p>Ask about work lunches, tournaments, parties and community events.</p><a class="button" href="#concept-4-order">Text about catering ↗</a></div></section>
+    </section>
+
+    <section id="concept-5" class="concept c5">
+      <div class="concept-meta"><span>Direction 05 / Midnight Truck Stop</span><b>After-dark · graphic · unforgettable</b></div>
+      <header class="concept-head"><strong>BIGG <em>DOGG</em></strong><nav><a href="#concept-5-story">The story</a><a href="#concept-5-menu">Menu board</a><a href="#concept-5-order">Order line</a></nav></header>
+      <section class="hero"><div class="hero-copy"><p class="eyebrow">Open for BIGG street eats</p><h1>Pull up.<br>Order <em>BIGG.</em></h1><p>A high-contrast truck stop experience for smash burgers, fish and chips, poutine and hungry nights.</p><div class="buttons"><a class="button" href="#concept-5-menu">Read the menu board</a><a class="button secondary" href="#concept-5-order">Call the truck</a></div></div><div class="hero-media"><img src="images/loaded-fries.jpg" alt="BIGG DOGG loaded fries"><div class="hero-label">Hot food / local stop</div></div></section>
+      <div class="feature-strip"><span>Smash</span><span>Haddock</span><span>Poutine</span><span>Call ahead</span></div>
+      <section id="concept-5-story" class="story"><div><p class="eyebrow">The story</p><h2>Street food<br><em>done BIGG.</em></h2></div><div><p class="story-lede">A food truck with a signal you can spot from the road.</p><p>Bright food, bold type and a simple path from hungry to ordered. BIGG DOGG serves Listowel with generous portions and a local family feel.</p><div class="story-proof"><div><strong>4.9 ★</strong>Google rating</div><div><strong>11–7</strong>Mon–Sat</div><div><strong>LOCAL</strong>Listowel</div></div></div></section>
+      <section id="concept-5-menu" class="menu-block"><div class="menu-head"><div><p class="eyebrow">Menu board / prices included</p><h2>Choose BIGG.</h2></div><div class="menu-order"><span>Order line</span><strong>647-679-5006</strong><a href="#concept-5-order">Call or text ↗</a></div></div><div class="menu-grid"><article class="menu-item"><img src="images/smash-burger.jpg" alt="Original Smash Burger"><div class="menu-item-copy"><small>01 / the original</small><h3>Original smash burger</h3><p>Crispy-edged beef, cheese, pickles, onions and house sauce.</p><div class="price"><strong>$9.50</strong><span>Combo $14.50</span></div></div></article><article class="menu-item"><img src="images/fish-and-chips.jpg" alt="Haddock Fish and Chips"><div class="menu-item-copy"><small>02 / fresh battered</small><h3>Haddock fish &amp; chips</h3><p>Six ounces of haddock and golden fries.</p><div class="price"><strong>$16.00</strong><span>Full meal</span></div></div></article><article class="menu-item"><img src="images/chicken-tenders.jpg" alt="Chicken Tenders"><div class="menu-item-copy"><small>03 / crunchy</small><h3>Chicken tenders</h3><p>Four crisp tenders. Add fries and a drink.</p><div class="price"><strong>$8.00</strong><span>Combo $12.50</span></div></div></article><article class="menu-item"><img src="images/poutine.jpg" alt="Loaded Fries and Poutine"><div class="menu-item-copy"><small>04 / fan favourite</small><h3>Loaded fries / poutine</h3><p>Fries piled high with gravy, curds or loaded toppings.</p><div class="price"><strong>$10.50</strong><span>Big portion</span></div></div></article></div><div id="concept-5-order" class="order-band"><div><span>Order line / call or text</span><strong>647-679-5006</strong></div><a class="button" href="tel:+16476795006">Call now ↗</a></div></section>
+      <section class="closing"><div class="closing-card"><p class="eyebrow">Find us</p><h3>Canadian Tire parking lot.</h3><p>500 Mitchell Road South, Listowel. Monday–Saturday, 11 AM–7 PM.</p><a class="button" href="#concept-5-order">Directions ↗</a></div><div class="closing-card dark"><p class="eyebrow">Catering</p><h3>Feed the whole pack.</h3><p>Text the date, headcount and location to ask about group service.</p><a class="button" href="#concept-5-order">Text catering ↗</a></div></section>
+    </section>
+  </main>
+  <script>
+    const selectedConcept = new URLSearchParams(location.search).get("concept");
+    if (/^[1-5]$/.test(selectedConcept || "")) {
+      document.body.classList.add("single-concept");
+      document.querySelectorAll(".concept").forEach((concept) => {
+        concept.hidden = concept.id !== `concept-${selectedConcept}`;
+      });
+    }
+  </script>
+</body>
+</html>
