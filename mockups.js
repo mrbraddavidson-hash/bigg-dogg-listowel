@@ -7,11 +7,14 @@
       document.querySelectorAll(".concept").forEach((concept) => {
         concept.hidden = concept.id !== `concept-${selectedConcept}`;
       });
-    } else if (selectedSet === "new" || selectedSet === "original") {
+    } else if (selectedSet === "new" || selectedSet === "original" || selectedSet === "more") {
       document.body.classList.add(`${selectedSet}-set`);
       document.querySelectorAll(".concept").forEach((concept) => {
         const number = Number(concept.id.replace("concept-", ""));
-        concept.hidden = selectedSet === "new" ? number < 6 : number > 5;
+        concept.hidden = selectedSet === "new"
+          ? number < 6 || number > 10
+          : selectedSet === "original"
+            ? number > 5
+            : number < 11;
       });
     }
-
