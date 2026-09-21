@@ -578,3 +578,90 @@
   .catering-actions .button { width: 100%; text-align: center; }
   .catering-phone { text-align: center; }
 }
+
+/* Menu transcription from the published BIGG DOGG menu graphic */
+.menu-title-lockup {
+  margin-bottom: 9px;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 12px;
+  font-weight: 950;
+}
+.menu-card-copy h3 { max-width: 310px; }
+.menu-card-copy > p { margin-bottom: 18px; }
+.menu-single-price {
+  display: block;
+  margin-top: 11px;
+  color: #6e655b;
+  font-size: 12px;
+  font-weight: 800;
+}
+.extras-heading > p {
+  margin-top: 15px;
+  color: #b9b0a2;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.extras-kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 10px;
+  font-weight: 950;
+}
+.menu-single-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 30px;
+}
+.menu-single-list p {
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ffffff2c;
+  line-height: 1.35;
+}
+.menu-single-list p span { color: var(--cream); }
+.menu-single-list p strong { flex: 0 0 auto; color: var(--yellow); }
+.menu-source-note,
+.menu-social-line {
+  grid-column: 1 / -1;
+}
+.menu-source-note {
+  margin-top: 19px;
+  line-height: 1.55;
+}
+.menu-source-note a {
+  color: var(--yellow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.menu-social-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 5px;
+  color: #b9b0a2;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 10px;
+  font-weight: 850;
+}
+.menu-social-line a {
+  color: var(--yellow);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  .menu-single-list { grid-template-columns: 1fr; }
+  .menu-social-line { gap: 8px 10px; }
+}
