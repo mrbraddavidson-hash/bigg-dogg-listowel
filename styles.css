@@ -134,6 +134,10 @@ img {
   color: var(--red);
 }
 
+.footer-brand b {
+  color: var(--gold);
+}
+
 .brand strong,
 .footer-brand strong {
   color: var(--ink);
