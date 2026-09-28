@@ -166,6 +166,95 @@ img {
   border-color: var(--red);
 }
 
+.hero-feature {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(390px, 46vw, 650px);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(48px, 7vw, 96px) clamp(20px, 7vw, 112px);
+  overflow: hidden;
+  background: var(--ink) url("/images/smash-burger.jpg") center 52% / cover no-repeat;
+  color: var(--white);
+}
+
+.hero-feature::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  inset: 0;
+  background: linear-gradient(90deg, #0b2938ed 0%, #0b2938ba 31%, #0b293852 62%, #0b293840 100%), linear-gradient(0deg, #0b293899 0%, #0b293800 42%);
+}
+
+.hero-feature-copy {
+  max-width: 760px;
+}
+
+.hero-feature-kicker {
+  margin: 0 0 17px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.hero-feature h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(62px, 8.5vw, 132px);
+  letter-spacing: -.055em;
+  line-height: .82;
+  text-transform: uppercase;
+}
+
+.hero-feature h1 em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.hero-feature-copy > p:not(.hero-feature-kicker) {
+  max-width: 430px;
+  margin: 25px 0 27px;
+  color: var(--ink-muted);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.hero-feature .button {
+  box-shadow: 5px 5px 0 var(--red);
+}
+
+.hero-feature-stamp {
+  position: absolute;
+  right: clamp(22px, 6vw, 92px);
+  bottom: clamp(26px, 6vw, 78px);
+  display: grid;
+  gap: 3px;
+  width: clamp(118px, 13vw, 176px);
+  height: clamp(118px, 13vw, 176px);
+  place-content: center;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--ink);
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(8deg);
+}
+
+.hero-feature-stamp span {
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: .12em;
+}
+
+.hero-feature-stamp strong {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: .84;
+}
+
 .header-order {
   display: grid;
   justify-self: end;
@@ -1641,6 +1730,16 @@ footer {
     display: none;
   }
 
+  .hero-feature {
+    min-height: 500px;
+    padding: 58px 28px 62px;
+  }
+
+  .hero-feature-stamp {
+    right: 28px;
+    bottom: 34px;
+  }
+
   .hero-redesign {
     grid-template-columns: 1fr;
     padding-top: 66px;
@@ -1786,6 +1885,30 @@ footer {
 
   .header-order b {
     display: none;
+  }
+
+  .hero-feature {
+    min-height: 470px;
+    padding: 42px 17px 45px;
+    background-position: 55% center;
+  }
+
+  .hero-feature h1 {
+    font-size: clamp(55px, 17vw, 92px);
+  }
+
+  .hero-feature-copy > p:not(.hero-feature-kicker) {
+    max-width: 290px;
+    margin: 20px 0 23px;
+    font-size: 15px;
+  }
+
+  .hero-feature-stamp {
+    top: 18px;
+    right: 14px;
+    bottom: auto;
+    width: 101px;
+    height: 101px;
   }
 
   .hero-redesign {
