@@ -1,15 +1,15 @@
 :root {
-  --paper: #f4eee4;
-  --paper-deep: #e4d8c8;
-  --paper-light: #fffaf1;
-  --ink: #171615;
-  --ink-soft: #282422;
-  --red: #e63a26;
-  --red-dark: #bd2c1d;
-  --gold: #f5c33d;
-  --muted: #786f64;
-  --line: #cbbdac;
-  --white: #fffaf0;
+  --paper: #fbf7ef;
+  --paper-deep: #e9f0eb;
+  --paper-light: #fffcf7;
+  --ink: #12343b;
+  --ink-soft: #1d4a50;
+  --red: #e96b52;
+  --red-dark: #b44a37;
+  --gold: #f2b964;
+  --muted: #5e7477;
+  --line: #c8d6d0;
+  --white: #fffdf8;
   --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
@@ -255,7 +255,7 @@ img {
 .hero-copy {
   max-width: 470px;
   margin: 0;
-  color: #595149;
+  color: #53676a;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -540,7 +540,7 @@ img {
 
 .order-ticket > p {
   margin: 18px 0 25px;
-  color: #c7bdb0;
+  color: #c5d0cd;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -574,7 +574,7 @@ img {
 }
 
 .ticket-steps small {
-  color: #a99d8f;
+  color: #a5b8b4;
   font-size: 10px;
 }
 
@@ -606,7 +606,7 @@ img {
 }
 
 .ticket-open small {
-  color: #a99d8f;
+  color: #a5b8b4;
   font-size: 10px;
 }
 
@@ -647,7 +647,7 @@ img {
 }
 
 .category-bar small {
-  color: #aa9f91;
+  color: #9cb0ad;
   font-size: 10px;
 }
 
@@ -686,7 +686,7 @@ img {
 
 .section-intro-side p {
   margin: 0 0 24px;
-  color: #5d554c;
+  color: #55686b;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -801,7 +801,7 @@ img {
 
 .feature-body p {
   margin: 14px 0 19px;
-  color: #685f55;
+  color: #53676a;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -884,7 +884,7 @@ img {
 .board-intro > p:last-of-type {
   max-width: 310px;
   margin: 0 0 26px;
-  color: #b9ada0;
+  color: #b8c8c3;
   font-size: 13px;
   line-height: 1.55;
 }
@@ -996,7 +996,7 @@ img {
 .story-copy > p:not(.eyebrow) {
   max-width: 570px;
   margin: 0 0 21px;
-  color: #ffe5d0;
+  color: #ffe9df;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -1041,7 +1041,7 @@ img {
 }
 
 .story-facts small {
-  color: #ffd2bf;
+  color: #ffd8cf;
   font-size: 11px;
 }
 
@@ -1066,7 +1066,7 @@ img {
 }
 
 .story-rating span {
-  color: #ffd2bf;
+  color: #ffd8cf;
   font-size: 11px;
 }
 
@@ -1154,7 +1154,7 @@ img {
 .visit-lede {
   max-width: 430px;
   margin: 29px 0;
-  color: #c7bdb0;
+  color: #c5d0cd;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -1191,7 +1191,7 @@ img {
 
 .visit-details p {
   margin: 3px 0 0;
-  color: #a99d8f;
+  color: #a5b8b4;
   font-size: 11px;
   line-height: 1.5;
 }
@@ -1331,7 +1331,7 @@ img {
 .catering-options span {
   padding: 8px 10px;
   border: 1px solid #ffffff42;
-  color: #e6dace;
+  color: #dbe6e2;
   text-transform: uppercase;
   letter-spacing: .08em;
   font-size: 9px;
@@ -1357,7 +1357,7 @@ img {
 }
 
 .catering-card-bottom small {
-  color: #a99d8f;
+  color: #a5b8b4;
   font-size: 10px;
 }
 
@@ -1400,7 +1400,7 @@ footer {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 20px;
-  color: #c5b8a9;
+  color: #b9c6c3;
   text-transform: uppercase;
   letter-spacing: .09em;
   font-size: 10px;
@@ -1416,7 +1416,7 @@ footer {
   margin: 0;
   padding-top: 21px;
   border-top: 1px solid #ffffff24;
-  color: #86796d;
+  color: #718487;
   font-size: 10px;
 }
 
