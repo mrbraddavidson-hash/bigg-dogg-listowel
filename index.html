@@ -74,29 +74,30 @@
         <span>BIGG DOGG</span>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#about">About us</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">Our story</a>
         <a href="#find-us">Find us</a>
         <a href="#catering">Catering</a>
       </nav>
       <div class="header-actions">
-        <a class="header-menu" href="#menu">Full menu</a>
-        <a class="header-order" href="tel:+16476795006">Call to order</a>
+        <a class="header-menu" href="#menu">View menu</a>
+        <a class="header-order" href="tel:+16476795006">Order now</a>
       </div>
     </header>
 
     <section class="hero" id="top">
       <div class="hero-copy">
-        <p class="eyebrow"><span></span> Listowel, Ontario</p>
-        <h1>Street food<br>done <em>BIGG.</em></h1>
-        <p class="hero-lede">Smash burgers with crispy edges, fresh battered haddock, loaded fries and real street eats—served hot at Canadian Tire in Listowel.</p>
+        <p class="eyebrow"><span></span> Listowel · made to order</p>
+        <h1>Smash burgers<br>done <em>BIGG.</em></h1>
+        <p class="hero-lede">Crispy-edged smash burgers, freshly battered haddock, loaded fries and the kind of portions that make the stop worth the drive.</p>
         <div class="hero-actions">
-          <a class="button button-yellow" href="#menu">View full menu &amp; prices ↓</a>
+          <a class="button button-yellow" href="#menu">See the menu ↓</a>
           <a class="button button-ghost" href="tel:+16476795006">Call 647-679-5006</a>
         </div>
         <p class="hero-order-note">Call or text to order · <a href="tel:+16476795006">647-679-5006</a></p>
-        <div class="status-row">
-          <div><strong>TYPICAL HOURS</strong><span>11 AM – 7 PM</span></div>
-          <div><strong>MON – SAT</strong><span>Sunday closed</span></div>
+        <div class="hero-quick-links" aria-label="Quick order details">
+          <div><span>Open</span><strong>11 AM – 7 PM</strong><small>Monday – Saturday</small></div>
+          <div><span>Parked at</span><strong>Canadian Tire</strong><small>500 Mitchell Road South</small></div>
         </div>
       </div>
       <div class="hero-image">
@@ -113,6 +114,13 @@
 
     <section class="marquee" aria-label="BIGG DOGG highlights">
       <span>SMASH BURGERS</span><b>✦</b><span>FISH &amp; CHIPS</span><b>✦</b><span>LOADED FRIES</span><b>✦</b><span>STREET EATS</span>
+    </section>
+
+    <section class="quick-order-strip" aria-label="Order, hours and location">
+      <div class="quick-order-lead"><span>Hungry now?</span><strong>Pick it up hot.</strong></div>
+      <a href="tel:+16476795006"><span>Call or text</span><strong>647-679-5006</strong><small>Order ahead</small></a>
+      <div><span>Open today</span><strong>11 AM – 7 PM</strong><small>Monday – Saturday</small></div>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=BIGG+DOGG+500+Mitchell+Rd+S+Listowel+ON" target="_blank" rel="noopener noreferrer"><span>Find the truck</span><strong>Canadian Tire lot</strong><small>Get directions ↗</small></a>
     </section>
 
     <section class="about about-redesign" id="about">
@@ -145,6 +153,7 @@
           <p class="eyebrow dark"><span></span> Must Try! Combos with fries &amp; drink</p>
           <h2>Full menu.</h2>
           <p class="menu-intro-copy">Home of the Original Smash Burger. Choose a combo, check the single items, then call or text before you head over.</p>
+          <nav class="menu-jumps" aria-label="Menu sections"><a href="#combos">Combos</a><a href="#single-items">Single items</a><a href="#catering">Catering</a></nav>
         </div>
         <div class="menu-order-card">
           <span>Call or text to order</span>
@@ -159,7 +168,7 @@
         <div><span>03</span><strong>Call or text</strong><small>647-679-5006</small></div>
       </div>
 
-      <div class="menu-grid">
+      <div class="menu-grid" id="combos">
         <article class="menu-card">
           <div class="menu-photo"><img src="/images/smash-burger.jpg" alt="Original Smash Burger" width="1200" height="900" loading="lazy"><span class="badge">The original</span></div>
           <div class="menu-card-copy"><h3>Home of the Original Smash Burger</h3><p>Must try! Combo with fries &amp; drink.</p><div class="price-row"><strong>$14.50</strong><span>combo</span></div><small class="menu-single-price">Single item $9.50</small></div>
@@ -178,7 +187,7 @@
         </article>
       </div>
 
-      <div class="extras">
+      <div class="extras" id="single-items">
         <div class="extras-heading">
           <span class="extras-kicker">The Best Food Truck in Town</span>
           <h3>Single Items</h3>
@@ -257,7 +266,7 @@
       <p class="disclaimer">Website concept only. Confirm menu, hours and image permissions with BIGG DOGG before official publication.</p>
     </footer>
 
-    <div class="mobile-bar"><a href="tel:+16476795006">Call to order</a><a href="#menu">View menu</a></div>
+    <div class="mobile-bar"><a href="tel:+16476795006">Order now</a><a href="#menu">View menu</a></div>
   </main>
 </body>
 </html>
