@@ -1,15 +1,17 @@
 :root {
-  --paper: #fbf7ef;
-  --paper-deep: #e9f0eb;
-  --paper-light: #fffcf7;
-  --ink: #12343b;
-  --ink-soft: #1d4a50;
-  --red: #e96b52;
-  --red-dark: #b44a37;
-  --gold: #f2b964;
-  --muted: #5e7477;
-  --line: #c8d6d0;
-  --white: #fffdf8;
+  --paper: #f3e8d0;
+  --paper-deep: #dfceb0;
+  --paper-light: #fff6e5;
+  --ink: #0b2938;
+  --ink-soft: #15495a;
+  --red: #d9423f;
+  --red-dark: #a82f38;
+  --gold: #f4c52f;
+  --muted: #5b6a61;
+  --line: #c8ae85;
+  --white: #fff9eb;
+  --purple: #392861;
+  --orange: #f06b37;
   --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
@@ -967,7 +969,7 @@ img {
   align-items: center;
   gap: clamp(30px, 6vw, 95px);
   padding: clamp(75px, 9vw, 135px) clamp(20px, 7vw, 112px);
-  background: var(--red);
+  background: var(--purple);
   color: var(--white);
   scroll-margin-top: 80px;
 }
@@ -996,7 +998,7 @@ img {
 .story-copy > p:not(.eyebrow) {
   max-width: 570px;
   margin: 0 0 21px;
-  color: #ffe9df;
+  color: #f6e0c8;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -1041,7 +1043,7 @@ img {
 }
 
 .story-facts small {
-  color: #ffd8cf;
+  color: #f5d6b2;
   font-size: 11px;
 }
 
@@ -1066,7 +1068,7 @@ img {
 }
 
 .story-rating span {
-  color: #ffd8cf;
+  color: #f5d6b2;
   font-size: 11px;
 }
 
