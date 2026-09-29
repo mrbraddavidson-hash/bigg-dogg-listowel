@@ -905,24 +905,8 @@ img {
   scroll-margin-top: 95px;
 }
 
-.board-intro {
-  position: relative;
-  align-self: start;
-}
-
-.board-intro .eyebrow {
-  color: var(--gold);
-}
-
-.board-intro > p:last-of-type {
-  max-width: 310px;
-  margin: 0 0 26px;
-  color: var(--ink-muted);
-  font-size: 13px;
-  line-height: 1.55;
-}
-
 .price-list {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-content: start;
@@ -1004,6 +988,17 @@ img {
   font-family: var(--display);
   font-size: 22px;
   line-height: 1;
+}
+
+.menu-note {
+  grid-column: 1 / -1;
+  max-width: 560px;
+  margin: 4px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #ffffff29;
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .menu-bottom {
@@ -1729,10 +1724,6 @@ footer {
   .menu-board {
     grid-template-columns: 1fr;
     gap: 32px;
-  }
-
-  .board-intro > p:last-of-type {
-    max-width: 520px;
   }
 
   .story-redesign {
