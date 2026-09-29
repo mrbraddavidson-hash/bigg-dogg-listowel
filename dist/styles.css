@@ -943,46 +943,6 @@ img {
   object-fit: cover;
 }
 
-.price-item--feature .price-item-image {
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px #f4c52f26, 0 10px 16px #0008;
-  transform-origin: 50% 60%;
-  animation: smash-burger-pop 4.5s cubic-bezier(.2, .8, .2, 1) infinite;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.price-item--feature:hover .price-item-image,
-.price-item--feature:focus-within .price-item-image {
-  animation: none;
-  transform: translateY(-6px) scale(1.12);
-  box-shadow: 0 0 0 6px #f4c52f40, 0 15px 28px #0009;
-}
-
-@keyframes smash-burger-pop {
-  0%, 78%, 100% {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 0 4px #f4c52f26, 0 10px 16px #0008;
-  }
-
-  84% {
-    transform: translateY(-7px) scale(1.11);
-    box-shadow: 0 0 0 6px #f4c52f40, 0 15px 28px #0009;
-  }
-
-  90% {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 0 4px #f4c52f26, 0 10px 16px #0008;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .price-item--feature .price-item-image {
-    animation: none;
-    transition: none;
-  }
-}
-
 .price-item-image--placeholder {
   border: 1px solid #d9b44a99;
 }
