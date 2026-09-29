@@ -231,24 +231,23 @@ img {
   bottom: clamp(26px, 6vw, 78px);
   display: grid;
   place-items: center;
-  width: clamp(132px, 15vw, 190px);
-  height: clamp(132px, 15vw, 190px);
-  border: 3px solid var(--gold);
-  border-radius: 50%;
-  outline: 9px solid var(--red);
-  outline-offset: -15px;
-  background: var(--ink);
+  width: clamp(170px, 19vw, 250px);
+  height: clamp(150px, 17vw, 220px);
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
   color: var(--white);
   transform: rotate(8deg);
   transform-origin: center;
-  box-shadow: 0 0 0 5px var(--ink), 0 18px 25px #0009;
+  box-shadow: none;
   animation: hero-stamp-boom 3.8s cubic-bezier(.22, 1, .36, 1) infinite;
 }
 
 .hero-feature-stamp:hover {
   animation: none;
   transform: rotate(2deg) scale(1.12);
-  box-shadow: 0 0 0 10px #f4c52f55, 0 0 0 5px var(--ink), 0 24px 28px #0009;
+  box-shadow: none;
 }
 
 .hero-feature-stamp img {
@@ -256,24 +255,24 @@ img {
   max-width: none;
   height: auto;
   transform: rotate(-2deg) translateY(4%);
-  filter: drop-shadow(0 9px 7px #000b) saturate(1.04);
+  filter: drop-shadow(0 11px 9px #000b) saturate(1.04);
   pointer-events: none;
 }
 
 @keyframes hero-stamp-boom {
   0%, 72%, 100% {
     transform: rotate(8deg) scale(1);
-    box-shadow: 0 0 0 5px var(--ink), 0 18px 25px #0009;
+    box-shadow: none;
   }
 
   79% {
     transform: rotate(2deg) scale(1.16);
-    box-shadow: 0 0 0 10px #f4c52f55, 0 0 0 5px var(--ink), 0 24px 28px #0009;
+    box-shadow: none;
   }
 
   87% {
     transform: rotate(8deg) scale(1);
-    box-shadow: 0 0 0 5px var(--ink), 0 18px 25px #0009;
+    box-shadow: none;
   }
 }
 
