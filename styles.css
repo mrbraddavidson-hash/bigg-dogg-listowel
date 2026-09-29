@@ -978,17 +978,6 @@ img {
   cursor: zoom-in;
 }
 
-.menu-photo-view::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 45%;
-  background: linear-gradient(transparent, #071c2acc);
-  content: "";
-  pointer-events: none;
-}
-
 .menu-photo-view img {
   width: 100%;
   height: 100%;
@@ -997,34 +986,14 @@ img {
   transition: transform .35s cubic-bezier(.22, 1, .36, 1);
 }
 
-.menu-photo-view > span {
-  position: absolute;
-  z-index: 1;
-  right: 7px;
-  bottom: 7px;
-  padding: 6px 8px;
-  background: var(--gold);
-  box-shadow: 3px 3px 0 var(--red);
-  color: var(--ink);
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  font-size: 9px;
-  font-weight: 950;
-  line-height: 1;
-  white-space: nowrap;
-  transition: background .2s ease, color .2s ease, transform .2s ease;
-}
-
 .menu-photo-view:hover img,
 .menu-photo-view:focus-visible img {
   transform: scale(1.12);
 }
 
-.menu-photo-view:hover > span,
-.menu-photo-view:focus-visible > span {
-  background: var(--red);
-  color: var(--white);
-  transform: translate(-2px, -2px);
+.menu-photo-view:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
 }
 
 .price-item-image--placeholder {
@@ -1139,8 +1108,7 @@ body.menu-lightbox-open {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .menu-photo-view img,
-  .menu-photo-view > span {
+  .menu-photo-view img {
     transition: none;
   }
 }
