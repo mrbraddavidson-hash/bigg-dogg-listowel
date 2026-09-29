@@ -964,16 +964,21 @@ img {
   background: #1b2525;
 }
 
-.menu-photo-order {
+.menu-photo-view {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
   overflow: hidden;
+  background: transparent;
   color: var(--ink);
+  cursor: zoom-in;
 }
 
-.menu-photo-order::after {
+.menu-photo-view::after {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -984,7 +989,7 @@ img {
   pointer-events: none;
 }
 
-.menu-photo-order img {
+.menu-photo-view img {
   width: 100%;
   height: 100%;
   display: block;
@@ -992,7 +997,7 @@ img {
   transition: transform .35s cubic-bezier(.22, 1, .36, 1);
 }
 
-.menu-photo-order > span {
+.menu-photo-view > span {
   position: absolute;
   z-index: 1;
   right: 7px;
@@ -1010,13 +1015,13 @@ img {
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 
-.menu-photo-order:hover img,
-.menu-photo-order:focus-visible img {
+.menu-photo-view:hover img,
+.menu-photo-view:focus-visible img {
   transform: scale(1.12);
 }
 
-.menu-photo-order:hover > span,
-.menu-photo-order:focus-visible > span {
+.menu-photo-view:hover > span,
+.menu-photo-view:focus-visible > span {
   background: var(--red);
   color: var(--white);
   transform: translate(-2px, -2px);
@@ -1070,9 +1075,72 @@ img {
   line-height: 1;
 }
 
+.menu-lightbox {
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+  margin: 0;
+  padding: 20px;
+  border: 0;
+  background: #071c2af5;
+  color: var(--white);
+}
+
+body.menu-lightbox-open {
+  overflow: hidden;
+}
+
+.menu-lightbox::backdrop {
+  background: #071c2af5;
+}
+
+.menu-lightbox-inner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-lightbox img {
+  display: block;
+  width: auto;
+  max-width: min(94vw, 1180px);
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 18px 50px #000b;
+}
+
+.menu-lightbox-close {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  padding: 0 0 4px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.menu-lightbox-close:hover,
+.menu-lightbox-close:focus-visible {
+  background: var(--red);
+  color: var(--white);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .menu-photo-order img,
-  .menu-photo-order > span {
+  .menu-photo-view img,
+  .menu-photo-view > span {
     transition: none;
   }
 }
