@@ -341,7 +341,6 @@ img {
 
 .hero-tagline em,
 .section-intro h2 em,
-.board-intro h3 em,
 .story-copy h2 em,
 .visit-panel h2 em,
 .catering-display h2 em {
@@ -911,30 +910,7 @@ img {
   align-self: start;
 }
 
-.board-number {
-  position: absolute;
-  top: -23px;
-  right: 0;
-  color: var(--gold);
-  font-family: var(--display);
-  font-size: 52px;
-  line-height: 1;
-}
-
 .board-intro .eyebrow {
-  color: var(--gold);
-}
-
-.board-intro h3 {
-  margin: 0 0 20px;
-  text-transform: uppercase;
-  font-family: var(--display);
-  font-size: clamp(58px, 6vw, 90px);
-  letter-spacing: -.04em;
-  line-height: .86;
-}
-
-.board-intro h3 em {
   color: var(--gold);
 }
 
@@ -1966,11 +1942,6 @@ footer {
     margin-top: 58px;
     padding: 36px 18px 37px;
     padding-top: 42px;
-  }
-
-  .board-intro h3 {
-    margin-top: 21px;
-    font-size: 70px;
   }
 
   .price-list {
