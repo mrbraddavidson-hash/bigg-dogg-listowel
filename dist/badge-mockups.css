@@ -182,6 +182,7 @@ h1 em { color: var(--red); font-style: normal; }
   display: grid;
   place-content: center;
   gap: 5px;
+  overflow: hidden;
   border-radius: 50%;
   text-align: center;
   text-transform: uppercase;
@@ -191,7 +192,22 @@ h1 em { color: var(--red); font-style: normal; }
 
 .badge:hover { transform: translateY(-50%) rotate(2deg) scale(1.08); }
 
-.badge-kicker, .badge-tail { display: block; letter-spacing: .1em; font-size: clamp(7px, 1vw, 10px); font-weight: 900; }
+.badge-burger {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: -15%;
+  width: 112%;
+  max-width: none;
+  transform: translateX(-50%) rotate(-5deg);
+  filter: drop-shadow(0 8px 5px #0009);
+  pointer-events: none;
+  animation: badge-burger-pop 3.8s cubic-bezier(.22, 1, .36, 1) infinite;
+}
+
+.badge-kicker, .badge strong, .badge-tail, .badge i { position: relative; z-index: 1; }
+
+.badge-kicker, .badge-tail { display: block; letter-spacing: .1em; font-size: clamp(7px, 1vw, 10px); font-weight: 900; text-shadow: 0 1px 0 #0006; }
 
 .badge strong { font-family: var(--display); font-size: clamp(24px, 4vw, 43px); line-height: .78; }
 
@@ -263,6 +279,23 @@ h1 em { color: var(--red); font-style: normal; }
 .badge--bullseye strong em { color: var(--gold); }
 .badge--bullseye i { left: 22px; bottom: 18px; color: var(--red); }
 
+@keyframes badge-burger-pop {
+  0%, 72%, 100% {
+    transform: translateX(-50%) rotate(-5deg) scale(1);
+  }
+  79% {
+    transform: translateX(-50%) rotate(-1deg) scale(1.12);
+  }
+  87% {
+    transform: translateX(-50%) rotate(-5deg) scale(1);
+  }
+}
+
+.badge-card:nth-child(2) .badge-burger { animation-delay: -.65s; }
+.badge-card:nth-child(3) .badge-burger { animation-delay: -1.3s; }
+.badge-card:nth-child(4) .badge-burger { animation-delay: -1.95s; }
+.badge-card:nth-child(5) .badge-burger { animation-delay: -2.6s; }
+
 .card-note { display: grid; gap: 5px; padding: 18px 19px 21px; background: var(--ink); }
 .card-note strong { color: var(--gold); text-transform: uppercase; letter-spacing: .1em; font-size: 12px; }
 .card-note span { max-width: 520px; color: #fff9ebcc; font-size: 13px; line-height: 1.45; }
@@ -305,4 +338,5 @@ h1 em { color: var(--red); font-style: normal; }
 
 @media (prefers-reduced-motion: reduce) {
   .badge { transition: none; }
+  .badge-burger { animation: none; }
 }
