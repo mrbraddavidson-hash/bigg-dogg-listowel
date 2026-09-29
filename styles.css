@@ -241,6 +241,39 @@ img {
   text-align: center;
   text-transform: uppercase;
   transform: rotate(8deg);
+  transform-origin: center;
+  box-shadow: 0 6px 0 var(--red-dark), 0 10px 18px #0007;
+  animation: hero-stamp-boom 3.8s cubic-bezier(.22, 1, .36, 1) infinite;
+}
+
+.hero-feature-stamp:hover {
+  animation: none;
+  transform: rotate(3deg) scale(1.12);
+  box-shadow: 0 0 0 10px #f4c52f55, 0 16px 0 var(--red-dark), 0 24px 28px #0009;
+}
+
+@keyframes hero-stamp-boom {
+  0%, 72%, 100% {
+    transform: rotate(8deg) scale(1);
+    box-shadow: 0 6px 0 var(--red-dark), 0 10px 18px #0007;
+  }
+
+  79% {
+    transform: rotate(2deg) scale(1.16);
+    box-shadow: 0 0 0 10px #f4c52f55, 0 16px 0 var(--red-dark), 0 24px 28px #0009;
+  }
+
+  87% {
+    transform: rotate(8deg) scale(1);
+    box-shadow: 0 6px 0 var(--red-dark), 0 10px 18px #0007;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-feature-stamp {
+    animation: none;
+    transition: none;
+  }
 }
 
 .hero-feature-stamp span {
