@@ -205,6 +205,18 @@ h1 em { color: var(--red); font-style: normal; }
   animation: badge-burger-pop 3.8s cubic-bezier(.22, 1, .36, 1) infinite;
 }
 
+.real-cutout-set .badge-burger {
+  bottom: -18%;
+  width: 118%;
+  filter: drop-shadow(0 10px 8px #000a) saturate(1.04);
+}
+
+.real-cutout-set .badge-card:nth-child(1) .badge-burger { --burger-angle: -7deg; --burger-pop-angle: -2deg; width: 116%; bottom: -19%; }
+.real-cutout-set .badge-card:nth-child(2) .badge-burger { --burger-angle: 4deg; --burger-pop-angle: 8deg; width: 123%; bottom: -17%; }
+.real-cutout-set .badge-card:nth-child(3) .badge-burger { --burger-angle: -2deg; --burger-pop-angle: 3deg; width: 126%; bottom: -21%; }
+.real-cutout-set .badge-card:nth-child(4) .badge-burger { --burger-angle: 6deg; --burger-pop-angle: 11deg; width: 112%; bottom: -15%; }
+.real-cutout-set .badge-card:nth-child(5) .badge-burger { --burger-angle: -5deg; --burger-pop-angle: 0deg; width: 121%; bottom: -20%; }
+
 .badge-kicker, .badge strong, .badge-tail, .badge i { position: relative; z-index: 1; }
 
 .badge-kicker, .badge-tail { display: block; letter-spacing: .1em; font-size: clamp(7px, 1vw, 10px); font-weight: 900; text-shadow: 0 1px 0 #0006; }
@@ -281,13 +293,13 @@ h1 em { color: var(--red); font-style: normal; }
 
 @keyframes badge-burger-pop {
   0%, 72%, 100% {
-    transform: translateX(-50%) rotate(-5deg) scale(1);
+    transform: translateX(-50%) rotate(var(--burger-angle, -5deg)) scale(1);
   }
   79% {
-    transform: translateX(-50%) rotate(-1deg) scale(1.12);
+    transform: translateX(-50%) rotate(var(--burger-pop-angle, -1deg)) scale(1.12);
   }
   87% {
-    transform: translateX(-50%) rotate(-5deg) scale(1);
+    transform: translateX(-50%) rotate(var(--burger-angle, -5deg)) scale(1);
   }
 }
 
