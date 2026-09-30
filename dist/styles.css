@@ -2052,3 +2052,146 @@ footer {
     color: var(--ink);
   }
 }
+
+
+
+.google-review-ticker {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 48px;
+  padding: 8px clamp(17px, 5vw, 76px);
+  overflow: hidden;
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.google-review-ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 10px;
+  font-weight: 950;
+}
+
+.google-review-ticker-label strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.google-review-ticker-label i {
+  color: var(--red);
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: -1px;
+}
+
+.google-review-ticker-window {
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.google-review-ticker-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 23px;
+  min-width: max-content;
+  padding-right: 23px;
+  animation: google-review-ticker-scroll 34s linear infinite;
+  white-space: nowrap;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.google-review-ticker:hover .google-review-ticker-track,
+.google-review-ticker:focus-within .google-review-ticker-track {
+  animation-play-state: paused;
+}
+
+.google-review-ticker-track a {
+  transition: color .2s ease;
+}
+
+.google-review-ticker-track a:hover,
+.google-review-ticker-track a:focus-visible {
+  color: var(--red-dark);
+}
+
+.google-review-ticker-track > span {
+  color: var(--red);
+  font-family: var(--display);
+  font-size: 15px;
+  font-style: normal;
+}
+
+.google-review-ticker-link {
+  padding: 7px 10px;
+  border: 1px solid #0b293866;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 10px;
+  font-weight: 950;
+  transition: background .2s ease, color .2s ease;
+}
+
+.google-review-ticker-link:hover,
+.google-review-ticker-link:focus-visible {
+  background: var(--ink);
+  color: var(--gold);
+}
+
+@keyframes google-review-ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .google-review-ticker-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .google-review-ticker {
+    grid-template-columns: 1fr auto;
+    gap: 5px 12px;
+    min-height: 56px;
+    padding: 8px 17px;
+  }
+
+  .google-review-ticker-label {
+    gap: 7px;
+    font-size: 9px;
+  }
+
+  .google-review-ticker-label strong {
+    font-size: 13px;
+  }
+
+  .google-review-ticker-window {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .google-review-ticker-track {
+    gap: 16px;
+    padding-right: 16px;
+    font-size: 13px;
+  }
+
+  .google-review-ticker-link {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+}
