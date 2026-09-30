@@ -1165,6 +1165,19 @@ body.menu-lightbox-open {
   justify-self: end;
 }
 
+.menu-bottom-order {
+  position: relative;
+  min-width: 154px;
+  padding-right: 40px;
+  padding-left: 40px;
+  text-align: center;
+}
+
+.menu-bottom-order b {
+  position: absolute;
+  right: 16px;
+}
+
 .story-redesign {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
