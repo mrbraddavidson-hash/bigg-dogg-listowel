@@ -1186,7 +1186,7 @@ body.menu-lightbox-open {
   align-items: center;
   gap: clamp(30px, 6vw, 95px);
   padding: clamp(75px, 9vw, 135px) clamp(20px, 7vw, 112px);
-  background: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), url("/images/kitchen-cook.jpg") center 38% / cover no-repeat;
+  background: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), url("/images/fish-and-chips.jpg") center 38% / cover no-repeat;
   color: var(--white);
   scroll-margin-top: 80px;
 }
