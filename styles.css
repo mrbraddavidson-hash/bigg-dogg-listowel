@@ -106,10 +106,8 @@ img {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: 1px solid #f4c52f99;
-  border-radius: 50%;
   color: var(--gold);
-  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+  transition: color .2s ease, transform .2s ease;
 }
 
 .topline-social svg {
@@ -120,10 +118,14 @@ img {
 
 .topline-social:hover,
 .topline-social:focus-visible {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--ink);
+  color: var(--white);
   transform: translateY(-1px);
+}
+
+.topline-social:focus-visible,
+.footer-social:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 .site-header {
@@ -1660,6 +1662,26 @@ footer {
 
 .footer-links a:hover {
   color: var(--gold);
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  letter-spacing: 0;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.footer-social:hover {
+  transform: translateY(-1px);
 }
 
 .mobile-bar {
