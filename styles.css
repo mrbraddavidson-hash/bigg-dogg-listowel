@@ -1466,7 +1466,6 @@ body.menu-lightbox-open {
   background: var(--ink);
   color: var(--white);
   box-shadow: 10px 10px 0 var(--red);
-  transform: rotate(1.5deg);
 }
 
 .catering-card-top {
