@@ -284,9 +284,10 @@ img {
 }
 
 .header-order {
-  display: grid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   justify-self: end;
-  gap: 2px;
   min-width: 168px;
   padding: 12px 17px;
   background: var(--ink);
@@ -298,6 +299,7 @@ img {
   letter-spacing: .1em;
   font-size: 11px;
   font-weight: 900;
+  text-align: center;
   transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
