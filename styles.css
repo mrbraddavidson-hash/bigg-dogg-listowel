@@ -15,6 +15,7 @@
   --purple: #392861;
   --orange: #f06b37;
   --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --display-tracking: -.045em;
 }
 
 * {
@@ -207,7 +208,7 @@ img {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(62px, 8.5vw, 132px);
-  letter-spacing: -.055em;
+  letter-spacing: var(--display-tracking);
   line-height: .82;
   text-transform: uppercase;
 }
@@ -365,7 +366,7 @@ img {
   text-transform: uppercase;
   font-family: var(--display);
   font-size: clamp(104px, 12.3vw, 190px);
-  letter-spacing: -.055em;
+  letter-spacing: var(--display-tracking);
   line-height: .69;
 }
 
@@ -378,7 +379,7 @@ img {
   margin: 39px 0 20px;
   font-family: var(--display);
   font-size: clamp(31px, 3vw, 51px);
-  letter-spacing: -.025em;
+  letter-spacing: var(--display-tracking);
   line-height: .93;
   text-transform: uppercase;
 }
@@ -577,6 +578,7 @@ img {
 .hero-food-label strong {
   color: var(--red);
   font-size: 24px;
+  letter-spacing: var(--display-tracking);
 }
 
 .rating {
@@ -635,12 +637,14 @@ img {
   color: var(--red);
   font-family: var(--display);
   font-size: 25px;
+  letter-spacing: var(--display-tracking);
 }
 
 .hero-food-caption strong {
   flex: 1;
   font-family: var(--display);
   font-size: 18px;
+  letter-spacing: var(--display-tracking);
   line-height: .92;
 }
 
@@ -678,7 +682,7 @@ img {
   color: var(--gold);
   font-family: var(--display);
   font-size: clamp(59px, 6vw, 86px);
-  letter-spacing: -.03em;
+  letter-spacing: var(--display-tracking);
   line-height: .8;
 }
 
@@ -746,6 +750,7 @@ img {
 .ticket-open strong {
   font-family: var(--display);
   font-size: 23px;
+  letter-spacing: var(--display-tracking);
   line-height: 1;
 }
 
@@ -773,7 +778,7 @@ img {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(67px, 9vw, 135px);
-  letter-spacing: -.045em;
+  letter-spacing: var(--display-tracking);
   line-height: .84;
   text-transform: uppercase;
 }
@@ -895,6 +900,7 @@ img {
   text-transform: uppercase;
   font-family: var(--display);
   font-size: clamp(25px, 2.25vw, 35px);
+  letter-spacing: var(--display-tracking);
   line-height: .9;
 }
 
@@ -923,6 +929,7 @@ img {
   color: var(--red);
   font-family: var(--display);
   font-size: 36px;
+  letter-spacing: var(--display-tracking);
   line-height: .8;
 }
 
@@ -1061,6 +1068,7 @@ img {
   color: var(--gold);
   font-family: var(--display);
   font-size: 22px;
+  letter-spacing: var(--display-tracking);
   line-height: 1;
 }
 
@@ -1164,7 +1172,7 @@ body.menu-lightbox-open {
   color: var(--ink);
   font-family: var(--display);
   font-size: 24px;
-  letter-spacing: 0;
+  letter-spacing: var(--display-tracking);
 }
 
 .menu-bottom a {
@@ -1200,7 +1208,7 @@ body.menu-lightbox-open {
   text-transform: uppercase;
   font-family: var(--display);
   font-size: clamp(63px, 7vw, 112px);
-  letter-spacing: -.045em;
+  letter-spacing: var(--display-tracking);
   line-height: .88;
 }
 
@@ -1220,6 +1228,7 @@ body.menu-lightbox-open {
   color: var(--white);
   font-family: var(--display);
   font-size: clamp(24px, 2.5vw, 34px);
+  letter-spacing: var(--display-tracking);
   line-height: 1.15;
 }
 
@@ -1284,6 +1293,7 @@ body.menu-lightbox-open {
   text-transform: uppercase;
   font-family: var(--display);
   font-size: 25px;
+  letter-spacing: var(--display-tracking);
   line-height: .9;
 }
 
@@ -1345,6 +1355,7 @@ body.menu-lightbox-open {
 .visit-image-label strong {
   font-family: var(--display);
   font-size: 55px;
+  letter-spacing: var(--display-tracking);
   line-height: .8;
 }
 
@@ -1365,7 +1376,7 @@ body.menu-lightbox-open {
   text-transform: uppercase;
   font-family: var(--display);
   font-size: clamp(63px, 7vw, 110px);
-  letter-spacing: -.045em;
+  letter-spacing: var(--display-tracking);
   line-height: .86;
 }
 
@@ -1408,6 +1419,7 @@ body.menu-lightbox-open {
 .visit-details strong {
   font-family: var(--display);
   font-size: 20px;
+  letter-spacing: var(--display-tracking);
   line-height: .95;
 }
 
@@ -1447,7 +1459,7 @@ body.menu-lightbox-open {
   text-transform: uppercase;
   font-family: var(--display);
   font-size: clamp(72px, 8vw, 132px);
-  letter-spacing: -.055em;
+  letter-spacing: var(--display-tracking);
   line-height: .84;
 }
 
@@ -1490,6 +1502,7 @@ body.menu-lightbox-open {
 .catering-card-top strong {
   font-family: var(--display);
   font-size: clamp(30px, 3vw, 44px);
+  letter-spacing: var(--display-tracking);
   line-height: .88;
 }
 
@@ -1524,6 +1537,7 @@ body.menu-lightbox-open {
   color: var(--gold);
   font-family: var(--display);
   font-size: 30px;
+  letter-spacing: var(--display-tracking);
   line-height: .9;
 }
 
