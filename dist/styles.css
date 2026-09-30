@@ -40,6 +40,10 @@ button {
   -webkit-font-smoothing: antialiased;
 }
 
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--display);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1214,7 +1218,7 @@ body.menu-lightbox-open {
 
 .story-copy .story-lede {
   color: var(--white);
-  font-family: Georgia, serif;
+  font-family: var(--display);
   font-size: clamp(24px, 2.5vw, 34px);
   line-height: 1.15;
 }
