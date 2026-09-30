@@ -1376,7 +1376,7 @@ body.menu-lightbox-open {
   align-items: stretch;
   gap: clamp(35px, 7vw, 100px);
   padding: clamp(70px, 9vw, 130px) clamp(20px, 7vw, 112px);
-  background: var(--gold);
+  background: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), url("/images/loaded-nachos.jpg") center 55% / cover no-repeat;
   color: var(--ink);
   scroll-margin-top: 80px;
 }
