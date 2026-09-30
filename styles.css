@@ -228,7 +228,7 @@ img {
 .hero-feature-stamp {
   position: absolute;
   right: clamp(22px, 6vw, 92px);
-  bottom: clamp(26px, 6vw, 78px);
+  bottom: clamp(62px, 9vw, 128px);
   display: grid;
   place-items: center;
   width: clamp(170px, 19vw, 250px);
@@ -1663,7 +1663,7 @@ footer {
 
   .hero-feature-stamp {
     right: 28px;
-    bottom: 34px;
+    bottom: 56px;
   }
 
   .hero-redesign {
