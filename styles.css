@@ -289,24 +289,27 @@ img {
   gap: 2px;
   min-width: 168px;
   padding: 12px 17px;
-  background: var(--ink);
+  background: var(--red);
   color: var(--white);
+  border-radius: 999px;
+  box-shadow: 0 7px 0 var(--ink);
   text-transform: uppercase;
   letter-spacing: .1em;
   font-size: 11px;
   font-weight: 900;
-  transition: transform .2s ease, background .2s ease;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
 .header-order b {
-  color: var(--gold);
+  color: var(--white);
   letter-spacing: .03em;
   font-size: 15px;
 }
 
 .header-order:hover {
-  background: var(--red);
-  transform: translateY(-2px);
+  background: var(--red-dark);
+  box-shadow: 0 3px 0 var(--ink);
+  transform: translateY(4px);
 }
 
 .hero-redesign {
@@ -399,13 +402,17 @@ img {
   justify-content: center;
   gap: 13px;
   min-height: 48px;
-  padding: 13px 17px;
-  border: 2px solid transparent;
+  padding: 14px 21px;
+  border: 2px solid var(--red);
+  border-radius: 999px;
+  box-shadow: 0 7px 0 var(--ink);
+  background: var(--red);
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: .1em;
   font-size: 11px;
   font-weight: 950;
-  transition: transform .2s ease, background .2s ease, color .2s ease;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
 .button b,
@@ -415,48 +422,41 @@ img {
 }
 
 .button:hover {
-  transform: translateY(-3px);
+  transform: translateY(0);
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+  box-shadow: 0 3px 0 var(--ink);
 }
 
-.button-dark {
-  background: var(--ink);
-  color: var(--white);
-  box-shadow: 5px 5px 0 var(--red);
-}
-
-.button-dark:hover {
-  background: var(--red);
-  box-shadow: 5px 5px 0 var(--ink);
-}
-
-.button-yellow {
-  background: var(--gold);
-  color: var(--ink);
-  box-shadow: 5px 5px 0 var(--red);
-}
-
-.button-yellow:hover {
-  background: var(--white);
-}
-
+.button-dark,
+.button-yellow,
 .button-ink {
-  background: var(--ink);
-  color: var(--gold);
+  color: var(--white);
+  background: var(--red);
+  border-color: var(--red);
 }
 
+.button-dark:hover,
+.button-yellow:hover,
 .button-ink:hover {
-  background: var(--red);
+  background: var(--red-dark);
   color: var(--white);
+  border-color: var(--red-dark);
+  box-shadow: 0 3px 0 var(--ink);
 }
 
 .button-outline-light {
-  border-color: #ffffff66;
+  background: var(--red);
   color: var(--white);
+  border-color: var(--red);
+  box-shadow: 0 7px 0 var(--ink);
 }
 
 .button-outline-light:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+  color: var(--white);
+  box-shadow: 0 3px 0 var(--ink);
 }
 
 .text-link {
