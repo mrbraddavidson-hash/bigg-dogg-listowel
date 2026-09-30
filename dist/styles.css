@@ -736,7 +736,7 @@ img {
 
 .menu-redesign {
   padding: clamp(75px, 9vw, 140px) clamp(20px, 5vw, 76px) 0;
-  background: var(--paper-deep);
+  background: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), url("/images/chilli-dog-combo.jpg") center 24% / cover no-repeat;
   scroll-margin-top: 80px;
 }
 
