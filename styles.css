@@ -1235,31 +1235,6 @@ body.menu-lightbox-open {
   font-size: 11px;
 }
 
-.story-facts .story-rating {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px;
-  padding-top: 25px;
-}
-
-.story-rating strong {
-  color: var(--gold);
-  font-family: var(--display);
-  font-size: 27px;
-}
-
-.story-rating strong i {
-  color: var(--white);
-  font-size: 12px;
-  font-style: normal;
-}
-
-.story-rating span {
-  color: #f5d6b2;
-  font-size: 11px;
-}
-
 .visit-redesign {
   display: grid;
   grid-template-columns: 1fr 1fr;
