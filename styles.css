@@ -2032,7 +2032,7 @@ footer {
 
 .google-review-ticker {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 18px;
   min-height: 48px;
@@ -2109,23 +2109,6 @@ footer {
   font-style: normal;
 }
 
-.google-review-ticker-link {
-  padding: 7px 10px;
-  border: 1px solid #0b293866;
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-size: 10px;
-  font-weight: 950;
-  transition: background .2s ease, color .2s ease;
-}
-
-.google-review-ticker-link:hover,
-.google-review-ticker-link:focus-visible {
-  background: var(--ink);
-  color: var(--gold);
-}
-
 @keyframes google-review-ticker-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -2139,7 +2122,7 @@ footer {
 
 @media (max-width: 850px) {
   .google-review-ticker {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     gap: 5px 12px;
     min-height: 56px;
     padding: 8px 17px;
@@ -2165,8 +2148,4 @@ footer {
     font-size: 13px;
   }
 
-  .google-review-ticker-link {
-    padding: 6px 8px;
-    font-size: 9px;
-  }
 }
