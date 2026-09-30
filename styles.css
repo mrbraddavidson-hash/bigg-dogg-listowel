@@ -15,7 +15,7 @@
   --purple: #392861;
   --orange: #f06b37;
   --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  --display-tracking: -.045em;
+  --display-tracking: .01em;
 }
 
 * {
