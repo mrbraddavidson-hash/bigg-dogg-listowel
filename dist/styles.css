@@ -1162,15 +1162,7 @@ body.menu-lightbox-open {
 }
 
 .menu-bottom a {
-  padding: 12px 15px;
-  background: var(--red);
-  color: var(--white);
-  letter-spacing: .08em;
-  transition: background .2s ease;
-}
-
-.menu-bottom a:hover {
-  background: var(--ink);
+  justify-self: end;
 }
 
 .story-redesign {
