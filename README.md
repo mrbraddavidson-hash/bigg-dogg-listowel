@@ -4,6 +4,20 @@ An unofficial BiggDogg Listowel food-truck website concept with a responsive men
 
 Live demo: https://bigg-dogg-listowel.mrbraddavidson.workers.dev/
 
+## Shared footer
+
+The reusable footer source lives in `partials/site-footer.html`. The plain static
+site uses marker-based build-time sync because this repository has no bundler or
+template engine. To update the homepage and 404 route together, run:
+
+```powershell
+node scripts/sync-footer.mjs
+```
+
+The script updates both root and `dist/` HTML copies and synchronizes the shared
+stylesheets. Keep site-specific content in the partial and site-specific colors in
+the `:root` theme variables in `theme.css`.
+
 ## Deploy
 
 The site is a static asset deployment for Cloudflare Workers/Pages:

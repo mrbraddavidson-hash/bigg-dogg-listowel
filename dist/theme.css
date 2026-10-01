@@ -1,0 +1,27 @@
+:root {
+  --paper: #f3e8d0;
+  --paper-deep: #dfceb0;
+  --paper-light: #fff6e5;
+  --ink: #0b2938;
+  --ink-soft: #15495a;
+  --red: #b73537;
+  --red-dark: #8f2832;
+  --gold: #f4c52f;
+  --muted: #42555a;
+  --paper-muted: #42555a;
+  --ink-muted: #fff9eb;
+  --line: #c8ae85;
+  --white: #fff9eb;
+  --purple: #392861;
+  --orange: #f06b37;
+  --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --display-tracking: .01em;
+
+  /* Bigg Dogg's theme contract for the reusable footer. */
+  --brand-bg: var(--ink);
+  --brand-surface: var(--ink-soft);
+  --brand-text: var(--white);
+  --brand-muted: var(--paper-light);
+  --brand-accent: var(--gold);
+  --brand-line: color-mix(in srgb, var(--brand-text) 18%, transparent);
+}
