@@ -1565,7 +1565,7 @@ body.menu-lightbox-open {
 .story-redesign {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
-  align-items: center;
+  align-items: start;
   gap: clamp(30px, 6vw, 95px);
   padding: clamp(75px, 9vw, 135px) clamp(20px, 7vw, 112px);
   background: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), url("/images/fish-and-chips.jpg") center 38% / cover no-repeat;
@@ -1581,6 +1581,10 @@ body.menu-lightbox-open {
   font-size: clamp(63px, 7vw, 112px);
   letter-spacing: var(--display-tracking);
   line-height: .88;
+}
+
+.story-copy {
+  align-self: start;
 }
 
 .story-copy h2 em {
@@ -1641,16 +1645,22 @@ body.menu-lightbox-open {
 
 .story-facts {
   display: grid;
-  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 20px;
   border-top: 1px solid #ffffff57;
 }
 
 .story-facts > div {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  gap: 8px 16px;
-  padding: 25px 0;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 8px 12px;
+  padding: 22px 0 24px;
   border-bottom: 1px solid #ffffff57;
+}
+
+.story-facts > div + div {
+  padding-left: 20px;
+  border-left: 1px solid #ffffff57;
 }
 
 .story-facts > div > span {
@@ -2650,7 +2660,13 @@ footer.site-footer {
   }
 
   .story-facts {
+    grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .story-facts > div + div {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .story-facts strong {
