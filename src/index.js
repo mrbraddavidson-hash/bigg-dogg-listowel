@@ -23,6 +23,21 @@ function withStaticHeaders(response) {
   });
 }
 
+async function markdownResponse(request, env) {
+  const markdownUrl = new URL("/index.md", request.url);
+  const markdownResponse = await env.ASSETS.fetch(new Request(markdownUrl, {
+    method: "GET",
+    headers: request.headers,
+  }));
+  const headers = new Headers(markdownResponse.headers);
+  headers.set("Content-Type", "text/markdown; charset=utf-8");
+  return withStaticHeaders(new Response(markdownResponse.body, {
+    status: markdownResponse.status,
+    statusText: markdownResponse.statusText,
+    headers,
+  }));
+}
+
 function jsonResponse(payload, status, cacheControl = "no-store") {
   return new Response(JSON.stringify(payload), {
     status,
@@ -128,6 +143,9 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/api/facebook-feed") {
       return handleFacebookFeed(request, env, ctx);
+    }
+    if (request.method === "GET" && url.pathname === "/" && (request.headers.get("Accept") || "").toLowerCase().includes("text/markdown")) {
+      return markdownResponse(request, env);
     }
     const assetResponse = await env.ASSETS.fetch(request);
     return withStaticHeaders(assetResponse);
