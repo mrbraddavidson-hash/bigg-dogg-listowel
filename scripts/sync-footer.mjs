@@ -4,15 +4,29 @@ import { fileURLToPath } from "node:url";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const partial = (await readFile(join(root, "partials", "site-footer.html"), "utf8")).trim();
+const cookiePartial = (await readFile(join(root, "partials", "cookie-banner.html"), "utf8")).trim();
 const startMarker = "<!-- site-footer:start -->";
 const endMarker = "<!-- site-footer:end -->";
 const block = `${startMarker}\n${partial.replace(`${startMarker}\n`, "").replace(`\n${endMarker}`, "")}\n${endMarker}`;
+const cookieStartMarker = "<!-- cookie-banner:start -->";
+const cookieEndMarker = "<!-- cookie-banner:end -->";
+const cookieBlock = `${cookieStartMarker}\n${cookiePartial.replace(`${cookieStartMarker}\n`, "").replace(`\n${cookieEndMarker}`, "")}\n${cookieEndMarker}`;
+
+function applyMarkerBlock(content, startMarker, endMarker, block, file) {
+  const start = content.indexOf(startMarker);
+  const end = content.indexOf(endMarker, start + startMarker.length);
+  if (start !== -1 && end !== -1) {
+    return `${content.slice(0, start)}${block}${content.slice(end + endMarker.length)}`;
+  }
+
+  throw new Error(`Could not find ${startMarker} in ${file}`);
+}
 
 function applyFooter(content, file) {
   const start = content.indexOf(startMarker);
   const end = content.indexOf(endMarker, start + startMarker.length);
   if (start !== -1 && end !== -1) {
-    return `${content.slice(0, start)}${block}${content.slice(end + endMarker.length)}`;
+    return applyMarkerBlock(content, startMarker, endMarker, block, file);
   }
 
   const footerStart = content.indexOf('<footer class="site-footer"');
@@ -33,13 +47,15 @@ function applyFooter(content, file) {
   throw new Error(`Could not find a footer insertion point in ${file}`);
 }
 
-for (const relativePath of ["index.html", "404.html"]) {
+for (const relativePath of ["index.html", "404.html", "privacy.html", "terms.html", "cookies.html"]) {
   const path = join(root, relativePath);
-  const updated = applyFooter(await readFile(path, "utf8"), relativePath);
+  let updated = applyFooter(await readFile(path, "utf8"), relativePath);
+  updated = applyMarkerBlock(updated, cookieStartMarker, cookieEndMarker, cookieBlock, relativePath);
   await writeFile(path, updated, "utf8");
   await copyFile(path, join(root, "dist", relativePath));
 }
 
 await copyFile(join(root, "styles.css"), join(root, "dist", "styles.css"));
 await copyFile(join(root, "theme.css"), join(root, "dist", "theme.css"));
+await copyFile(join(root, "cookie-consent.js"), join(root, "dist", "cookie-consent.js"));
 console.log("Synced partials/site-footer.html into root and dist HTML routes.");
