@@ -1478,6 +1478,14 @@ body.menu-lightbox-open {
   line-height: 1.5;
 }
 
+.visit-details address {
+  margin: 3px 0 0;
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
 .visit-details p i {
   color: var(--gold);
   font-style: normal;
@@ -1592,6 +1600,95 @@ body.menu-lightbox-open {
 .catering-card-bottom small {
   color: var(--ink-muted);
   font-size: 11px;
+}
+
+.faq-redesign {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  align-items: start;
+  gap: clamp(35px, 7vw, 100px);
+  padding: clamp(68px, 8vw, 110px) clamp(20px, 7vw, 112px);
+  background: var(--paper-light);
+  color: var(--ink);
+  scroll-margin-top: 80px;
+}
+
+.faq-heading h2 {
+  margin: 0 0 24px;
+  text-transform: uppercase;
+  font-family: var(--display);
+  font-size: clamp(58px, 6.6vw, 100px);
+  letter-spacing: var(--display-tracking);
+  line-height: .86;
+}
+
+.faq-heading h2 em {
+  color: var(--red);
+  font-style: normal;
+}
+
+.faq-heading > p:last-child {
+  max-width: 360px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--display);
+  font-size: clamp(22px, 2.4vw, 32px);
+  letter-spacing: var(--display-tracking);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  flex: 0 0 auto;
+  color: var(--red);
+  content: "+";
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faq-list details[open] summary::after {
+  content: "−";
+}
+
+.faq-list details p {
+  max-width: 650px;
+  margin: 0 40px 23px 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.faq-list details a {
+  color: var(--red-dark);
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 footer {
@@ -1828,7 +1925,8 @@ footer {
   }
 
   .section-intro,
-  .catering-redesign {
+  .catering-redesign,
+  .faq-redesign {
     grid-template-columns: 1fr;
     gap: 30px;
   }
@@ -2126,6 +2224,14 @@ footer {
   .catering-redesign {
     gap: 35px;
     padding: 68px 20px 78px;
+  }
+
+  .faq-redesign {
+    padding: 68px 20px 78px;
+  }
+
+  .faq-list summary {
+    font-size: 27px;
   }
 
   .catering-display h2 {
