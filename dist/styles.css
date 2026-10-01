@@ -18,6 +18,18 @@
   --display-tracking: .01em;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -95,7 +107,7 @@ img {
 }
 
 .topline a {
-  color: var(--gold);
+  color: var(--white);
 }
 
 .topline-contact {
@@ -115,7 +127,7 @@ img {
   justify-content: center;
   width: 44px;
   height: 44px;
-  color: var(--gold);
+  color: var(--white);
   transition: color .2s ease, transform .2s ease;
 }
 
@@ -1096,8 +1108,10 @@ img {
   gap: 10px;
 }
 
-.price-item-content > span {
+.price-item-content > h3 {
   min-width: 0;
+  margin: 0;
+  font: inherit;
 }
 
 .price-item small {
