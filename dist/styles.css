@@ -184,6 +184,12 @@ img {
   border-radius: 50%;
 }
 
+.brand picture {
+  display: block;
+  width: 62px;
+  height: 62px;
+}
+
 .brand span,
 .footer-brand span {
   display: grid;
@@ -318,6 +324,16 @@ img {
   transform: rotate(-2deg) translateY(4%);
   filter: drop-shadow(0 11px 9px #000b) saturate(1.04);
   pointer-events: none;
+}
+
+.hero-feature-stamp picture,
+.menu-photo-view picture,
+.story-photo picture,
+.visit-image picture,
+.footer-brand picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes hero-stamp-boom {
@@ -1737,6 +1753,12 @@ footer {
   border-radius: 50%;
 }
 
+.footer-brand picture {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+}
+
 .footer-brand span {
   font-size: 23px;
 }
@@ -2011,6 +2033,11 @@ footer {
   }
 
   .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand picture {
     width: 52px;
     height: 52px;
   }

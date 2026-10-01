@@ -1,10 +1,10 @@
 /*
   X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), geolocation=(), microphone=()
   Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Cache-Control: public, max-age=300, must-revalidate
 
 /images/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400

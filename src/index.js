@@ -2,6 +2,27 @@ const DEFAULT_PAGE_ID = "61550663527060";
 const DEFAULT_GRAPH_VERSION = "v25.0";
 const FEED_LIMIT = "6";
 
+const STATIC_SECURITY_HEADERS = {
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), geolocation=(), microphone=()",
+  "Content-Security-Policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+};
+
+function withStaticHeaders(response) {
+  const headers = new Headers(response.headers);
+  for (const [name, value] of Object.entries(STATIC_SECURITY_HEADERS)) {
+    headers.set(name, value);
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 function jsonResponse(payload, status, cacheControl = "no-store") {
   return new Response(JSON.stringify(payload), {
     status,
@@ -108,6 +129,7 @@ export default {
     if (url.pathname === "/api/facebook-feed") {
       return handleFacebookFeed(request, env, ctx);
     }
-    return env.ASSETS.fetch(request);
+    const assetResponse = await env.ASSETS.fetch(request);
+    return withStaticHeaders(assetResponse);
   },
 };
