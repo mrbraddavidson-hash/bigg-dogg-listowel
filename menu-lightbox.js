@@ -9,7 +9,7 @@
   const close = () => {
     if (dialog.open) dialog.close();
     document.body.classList.remove('menu-lightbox-open');
-    image.src = '/images/smash-burger.jpg';
+    image.src = '/images/smash-burger.webp';
     image.alt = 'Selected menu photo';
   };
 

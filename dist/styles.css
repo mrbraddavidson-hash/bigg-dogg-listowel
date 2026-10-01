@@ -246,6 +246,7 @@ img {
   padding: clamp(48px, 7vw, 96px) clamp(20px, 7vw, 112px);
   overflow: hidden;
   background: var(--ink) url("/images/smash-burger.jpg") center 52% / cover no-repeat;
+  background-image: image-set(url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
   color: var(--white);
 }
 
@@ -834,6 +835,7 @@ img {
 .menu-redesign {
   padding: clamp(75px, 9vw, 140px) clamp(20px, 5vw, 76px) 0;
   background: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), url("/images/chilli-dog-combo.jpg") center 24% / cover no-repeat;
+  background-image: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), image-set(url("/images/chilli-dog-combo.webp") type("image/webp"), url("/images/chilli-dog-combo.jpg") type("image/jpeg"));
   scroll-margin-top: 80px;
 }
 
@@ -1273,6 +1275,7 @@ body.menu-lightbox-open {
   gap: clamp(30px, 6vw, 95px);
   padding: clamp(75px, 9vw, 135px) clamp(20px, 7vw, 112px);
   background: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), url("/images/fish-and-chips.jpg") center 38% / cover no-repeat;
+  background-image: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), image-set(url("/images/fish-and-chips.webp") type("image/webp"), url("/images/fish-and-chips.jpg") type("image/jpeg"));
   color: var(--white);
   scroll-margin-top: 80px;
 }
@@ -1532,6 +1535,7 @@ body.menu-lightbox-open {
   gap: clamp(35px, 7vw, 100px);
   padding: clamp(70px, 9vw, 130px) clamp(20px, 7vw, 112px);
   background: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), url("/images/loaded-nachos.jpg") center 55% / cover no-repeat;
+  background-image: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), image-set(url("/images/loaded-nachos.webp") type("image/webp"), url("/images/loaded-nachos.jpg") type("image/jpeg"));
   color: var(--ink);
   scroll-margin-top: 80px;
 }
