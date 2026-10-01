@@ -2200,6 +2200,11 @@ footer.site-footer {
   border-top: 1px solid var(--brand-line);
 }
 
+.site-footer__bottom-left {
+  display: grid;
+  gap: 7px;
+}
+
 .site-footer__bottom p,
 .site-footer__bottom-links a {
   color: var(--brand-muted);
@@ -2213,6 +2218,18 @@ footer.site-footer {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 10px 22px;
+}
+
+.site-footer__bottom-left .site-credit {
+  width: fit-content;
+  color: color-mix(in srgb, var(--brand-muted) 72%, transparent);
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: none;
+}
+
+.site-footer__bottom-left .site-credit:hover {
+  color: var(--brand-accent);
 }
 
 .site-credit {
