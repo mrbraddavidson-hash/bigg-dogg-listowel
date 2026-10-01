@@ -12,14 +12,6 @@
 
 /* Legal pages and the site-owned cookie notice. These rules use the shared
    Bigg Dogg theme variables so the footer and information pages stay on-brand. */
-.site-footer__label--legal {
-  margin-top: 28px;
-}
-
-.site-footer__nav-grid--legal {
-  gap: 8px;
-}
-
 .site-footer__bottom-links button {
   padding: 0;
   color: var(--brand-muted);
@@ -38,6 +30,26 @@
 .site-footer__bottom-links button:hover {
   color: var(--brand-text);
   transform: translateX(2px);
+}
+
+.site-footer__legal-links {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.site-footer__legal-label {
+  color: var(--brand-accent);
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.site-footer__legal-links a {
+  font-size: 9px;
+  letter-spacing: .06em;
 }
 
 .cookie-banner {
