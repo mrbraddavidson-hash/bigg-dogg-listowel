@@ -603,11 +603,17 @@ img {
   margin: 0;
   background: #0b2938;
   font-family: var(--display);
-  font-size: clamp(62px, 8.5vw, 132px);
+  font-size: clamp(58px, 7.2vw, 106px);
   letter-spacing: .03em;
   word-spacing: .04em;
   line-height: .88;
   text-transform: uppercase;
+}
+
+@media (min-width: 701px) {
+  .hero-feature h1 {
+    white-space: nowrap;
+  }
 }
 
 .hero-feature h1 em {
