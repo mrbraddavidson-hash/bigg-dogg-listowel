@@ -604,8 +604,9 @@ img {
   background: #0b2938;
   font-family: var(--display);
   font-size: clamp(62px, 8.5vw, 132px);
-  letter-spacing: var(--display-tracking);
-  line-height: .82;
+  letter-spacing: .03em;
+  word-spacing: .04em;
+  line-height: .88;
   text-transform: uppercase;
 }
 
@@ -2600,6 +2601,9 @@ footer.site-footer {
 
   .hero-feature h1 {
     font-size: clamp(55px, 17vw, 92px);
+    letter-spacing: .02em;
+    word-spacing: .02em;
+    line-height: .92;
   }
 
   .hero-feature-copy > p:not(.hero-feature-kicker) {
