@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>BIGG DOGG Listowel</title>
+    <link>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/</link>
+    <description>BIGG DOGG menu, location and ordering information for Listowel, Ontario.</description>
+    <language>en-ca</language>
+    <item>
+      <title>BIGG DOGG menu and Listowel location</title>
+      <link>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#menu</link>
+      <guid isPermaLink="true">https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#menu</guid>
+      <description>See the current menu, prices, location, hours and phone ordering details for BIGG DOGG in Listowel.</description>
+    </item>
+  </channel>
+</rss>

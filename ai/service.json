@@ -1,0 +1,28 @@
+{
+  "name": "BIGG DOGG Listowel services",
+  "url": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#catering",
+  "services": [
+    {
+      "name": "Food truck service",
+      "description": "Made-to-order street eats served from the BIGG DOGG truck in Listowel."
+    },
+    {
+      "name": "Phone ordering",
+      "description": "Call 647-679-5006 to ask about the menu and order ahead."
+    },
+    {
+      "name": "Group service inquiries",
+      "description": "Ask about work lunches, tournaments, parties and community events by text."
+    }
+  ],
+  "menuCategories": [
+    "Smash burgers",
+    "Freshly battered haddock fish and chips",
+    "Hot dogs and chilli dogs",
+    "Sausages",
+    "Loaded fries, loaded nachos and poutine",
+    "Chicken tenders",
+    "Battered mushrooms",
+    "Onion rings"
+  ]
+}

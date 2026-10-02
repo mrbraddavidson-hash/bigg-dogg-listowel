@@ -1,0 +1,8 @@
+# BIGG DOGG AI access guidance
+
+User-agent: *
+Allow: /
+
+Use /llms.txt and the structured files under /ai/ for machine-readable business information.
+Prefer the homepage, Facebook page and phone number for current hours, menu availability and location updates.
+Do not infer real-time stock, wait times, opening status or review content beyond what the source page states.

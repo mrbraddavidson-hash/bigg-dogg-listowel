@@ -584,14 +584,17 @@ img {
 }
 
 .hero-feature-copy {
+  position: relative;
+  z-index: 1;
   max-width: 760px;
   padding: clamp(20px, 3vw, 36px);
-  background: #0b2938;
+  background-color: var(--ink);
+  color: var(--white);
 }
 
 .hero-feature-kicker {
   margin: 0 0 17px;
-  background: #0b2938;
+  background-color: var(--ink);
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: .16em;
@@ -601,7 +604,8 @@ img {
 
 .hero-feature h1 {
   margin: 0;
-  background: #0b2938;
+  background-color: var(--ink);
+  color: var(--white);
   font-family: var(--display);
   font-size: clamp(58px, 7.2vw, 106px);
   letter-spacing: .03em;
@@ -626,7 +630,7 @@ img {
 }
 
 .hero-feature h1 em {
-  background: #0b2938;
+  background-color: var(--ink);
   color: var(--gold);
   font-style: normal;
 }
@@ -634,14 +638,14 @@ img {
 .hero-feature-copy > p:not(.hero-feature-kicker) {
   max-width: 430px;
   margin: 25px 0 27px;
-  background: #0b2938;
+  background-color: var(--ink);
   color: var(--ink-muted);
   font-size: 17px;
   line-height: 1.45;
 }
 
 .hero-feature-copy > .button {
-  background: #0b2938;
+  background-color: var(--ink);
   color: var(--white);
 }
 
@@ -1187,7 +1191,8 @@ img {
 .menu-redesign {
   padding: clamp(75px, 9vw, 140px) clamp(20px, 5vw, 76px) 0;
   background: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), url("/images/chilli-dog-combo.jpg") center 24% / cover no-repeat;
-  background-image: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), -webkit-image-set(url("/images/chilli-dog-combo.webp") type("image/webp"), url("/images/chilli-dog-combo.jpg") type("image/jpeg"));
+  background-image: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), -webkit-image-set(url("/images/chilli-dog-combo.avif") type("image/avif"), url("/images/chilli-dog-combo.webp") type("image/webp"), url("/images/chilli-dog-combo.jpg") type("image/jpeg"));
+  background-image: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), image-set(url("/images/chilli-dog-combo.avif") type("image/avif"), url("/images/chilli-dog-combo.webp") type("image/webp"), url("/images/chilli-dog-combo.jpg") type("image/jpeg"));
   scroll-margin-top: 80px;
 }
 
@@ -1673,7 +1678,8 @@ body.menu-lightbox-open {
   gap: clamp(30px, 6vw, 95px);
   padding: clamp(75px, 9vw, 135px) clamp(20px, 7vw, 112px);
   background: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), url("/images/fish-and-chips.jpg") center 38% / cover no-repeat;
-  background-image: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), -webkit-image-set(url("/images/fish-and-chips.webp") type("image/webp"), url("/images/fish-and-chips.jpg") type("image/jpeg"));
+  background-image: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), -webkit-image-set(url("/images/fish-and-chips.avif") type("image/avif"), url("/images/fish-and-chips.webp") type("image/webp"), url("/images/fish-and-chips.jpg") type("image/jpeg"));
+  background-image: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), image-set(url("/images/fish-and-chips.avif") type("image/avif"), url("/images/fish-and-chips.webp") type("image/webp"), url("/images/fish-and-chips.jpg") type("image/jpeg"));
   color: var(--white);
   scroll-margin-top: 80px;
 }
@@ -1842,7 +1848,7 @@ body.menu-lightbox-open {
 }
 
 .visit-image-label span {
-  background: var(--ink);
+  background-color: var(--ink);
   color: var(--gold);
   letter-spacing: .15em;
   font-size: 11px;
@@ -1850,7 +1856,8 @@ body.menu-lightbox-open {
 }
 
 .visit-image-label strong {
-  background: var(--ink);
+  background-color: var(--ink);
+  color: var(--white);
   font-family: var(--display);
   font-size: 55px;
   letter-spacing: var(--display-tracking);
@@ -1952,7 +1959,8 @@ body.menu-lightbox-open {
   gap: clamp(35px, 7vw, 100px);
   padding: clamp(70px, 9vw, 130px) clamp(20px, 7vw, 112px);
   background: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), url("/images/loaded-nachos.jpg") center 55% / cover no-repeat;
-  background-image: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), -webkit-image-set(url("/images/loaded-nachos.webp") type("image/webp"), url("/images/loaded-nachos.jpg") type("image/jpeg"));
+  background-image: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), -webkit-image-set(url("/images/loaded-nachos.avif") type("image/avif"), url("/images/loaded-nachos.webp") type("image/webp"), url("/images/loaded-nachos.jpg") type("image/jpeg"));
+  background-image: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), image-set(url("/images/loaded-nachos.avif") type("image/avif"), url("/images/loaded-nachos.webp") type("image/webp"), url("/images/loaded-nachos.jpg") type("image/jpeg"));
   color: var(--ink);
   scroll-margin-top: 80px;
 }
@@ -2254,8 +2262,9 @@ footer.site-footer {
 .site-footer__nav a span,
 .site-footer__phone span,
 .site-footer__bottom-links a span {
-  color: var(--brand-accent);
-  background: var(--brand-bg);
+  display: inline-block;
+  color: var(--brand-text);
+  background-color: var(--brand-bg);
 }
 
 .site-footer__nav a:hover,
@@ -2936,7 +2945,7 @@ footer.site-footer {
 
 .google-review-ticker-label i {
   color: var(--ink);
-  background: var(--gold);
+  background-color: var(--gold);
   font-size: 11px;
   font-style: normal;
   letter-spacing: -1px;

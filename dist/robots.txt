@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
+# AI crawlers may read the public site and the machine-readable summaries.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://bigg-dogg-listowel.mrbraddavidson.workers.dev/sitemap.xml

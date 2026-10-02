@@ -1,0 +1,22 @@
+{
+  "name": "BIGG DOGG",
+  "alternateName": "Bigg Dogg Street Eats",
+  "description": "BIGG DOGG is a locally owned food truck serving smash burgers, freshly battered haddock, poutine, loaded fries and street eats in Listowel, Ontario.",
+  "url": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/",
+  "location": {
+    "streetAddress": "500 Mitchell Road South",
+    "addressLocality": "Listowel",
+    "addressRegion": "Ontario",
+    "postalCode": "N4W 0C8",
+    "addressCountry": "Canada"
+  },
+  "hours": "Monday through Saturday, 11:00 AM to 7:00 PM; Sunday closed. Hours may change.",
+  "orderPhone": "647-679-5006",
+  "menuUrl": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#menu",
+  "officialLinks": {
+    "facebook": "https://www.facebook.com/61550663527060/",
+    "instagram": "https://www.instagram.com/bigg_dogg2023/",
+    "googleMaps": "https://www.google.com/maps/search/?api=1&query=BIGG+DOGG+500+Mitchell+Rd+S+Listowel+ON"
+  },
+  "sourceGuidance": "Use the website and official social links for current menu availability, hours and location updates."
+}

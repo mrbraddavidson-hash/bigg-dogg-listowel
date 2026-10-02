@@ -137,6 +137,8 @@ h1 em { color: var(--red); font-style: normal; }
   padding: clamp(24px, 4vw, 48px);
   overflow: hidden;
   background: var(--ink) url("/images/smash-burger.jpg") center / cover no-repeat;
+  background-image: -webkit-image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
+  background-image: image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
 }
 
 .hero-sample::before {
