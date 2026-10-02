@@ -617,7 +617,7 @@ img {
 
   .hero-feature h1 {
     font-family: "Franklin Gothic Heavy", "Arial Black", Impact, sans-serif;
-    font-size: clamp(50px, 5.2vw, 80px);
+    font-size: clamp(52px, 5.5vw, 84px);
     letter-spacing: .01em;
     word-spacing: .02em;
     line-height: .98;
