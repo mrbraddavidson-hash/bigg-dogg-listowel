@@ -611,6 +611,10 @@ img {
 }
 
 @media (min-width: 701px) {
+  .hero-feature-copy {
+    padding: 30px 28px 32px;
+  }
+
   .hero-feature h1 {
     white-space: nowrap;
   }
