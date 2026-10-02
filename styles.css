@@ -2599,17 +2599,7 @@ footer.site-footer {
   }
 
   .hero-feature h1 {
-    /* Keep the display heading inside the narrowest phone viewport. */
-    max-width: 100%;
-    font-size: clamp(44px, 14vw, 82px);
-    letter-spacing: .02em;
-    line-height: .9;
-    overflow-wrap: break-word;
-  }
-
-  .hero-feature h1 em {
-    display: block;
-    max-width: 100%;
+    font-size: clamp(55px, 17vw, 92px);
   }
 
   .hero-feature-copy > p:not(.hero-feature-kicker) {
