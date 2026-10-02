@@ -5,10 +5,10 @@
   --ink: #0b2938;
   --ink-soft: #15495a;
   --red: #b73537;
-  --red-dark: #8f2832;
+  --red-dark: #76212c;
   --gold: #f4c52f;
   --muted: #42555a;
-  --paper-muted: #42555a;
+  --paper-muted: #34474c;
   --ink-muted: #fff9eb;
   --line: #c8ae85;
   --white: #fff9eb;
@@ -23,5 +23,5 @@
   --brand-text: var(--white);
   --brand-muted: var(--paper-light);
   --brand-accent: var(--gold);
-  --brand-line: color-mix(in srgb, var(--brand-text) 18%, transparent);
+  --brand-line: #3b5662;
 }

@@ -1,19 +1,41 @@
 /*
   X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), geolocation=(), microphone=()
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Vary: Accept-Encoding
+
+/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
+  Cache-Control: public, max-age=180, s-maxage=3600, stale-while-revalidate=86400
+
+/*.html
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
+  Cache-Control: public, max-age=180, s-maxage=3600, stale-while-revalidate=86400
+
+/privacy
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=180, s-maxage=3600, stale-while-revalidate=86400
+
+/terms
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=180, s-maxage=3600, stale-while-revalidate=86400
+
+/cookies
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=180, s-maxage=3600, stale-while-revalidate=86400
 
 /images/*
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.css
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.js
-  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.webmanifest
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800

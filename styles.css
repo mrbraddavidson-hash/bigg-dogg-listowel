@@ -1,3 +1,31 @@
+:root {
+  --paper: #f3e8d0;
+  --paper-deep: #dfceb0;
+  --paper-light: #fff6e5;
+  --ink: #0b2938;
+  --ink-soft: #15495a;
+  --red: #b73537;
+  --red-dark: #76212c;
+  --gold: #f4c52f;
+  --muted: #42555a;
+  --paper-muted: #34474c;
+  --ink-muted: #fff9eb;
+  --line: #c8ae85;
+  --white: #fff9eb;
+  --purple: #392861;
+  --orange: #f06b37;
+  --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --display-tracking: .01em;
+
+  /* Bigg Dogg's theme contract for the reusable footer. */
+  --brand-bg: var(--ink);
+  --brand-surface: var(--ink-soft);
+  --brand-text: var(--white);
+  --brand-muted: var(--paper-light);
+  --brand-accent: var(--gold);
+  --brand-line: #3b5662;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -93,6 +121,7 @@
   max-width: 690px;
   margin: 0;
   color: var(--brand-muted);
+  background: var(--brand-bg);
   font-size: 13px;
   line-height: 1.55;
 }
@@ -383,7 +412,7 @@ img {
   align-items: center;
   gap: 18px;
   padding: 0 clamp(20px, 5vw, 76px);
-  background: var(--red);
+  background: var(--red-dark);
   color: var(--white);
   text-transform: none;
   letter-spacing: .11em;
@@ -455,8 +484,9 @@ img {
   gap: 24px;
   margin: 0 auto;
   padding: 13px clamp(20px, 5vw, 76px);
-  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  background: rgba(243, 232, 208, .92);
   border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
 
@@ -496,7 +526,7 @@ img {
 
 .brand b,
 .footer-brand b {
-  color: var(--red);
+  color: var(--red-dark);
 }
 
 .footer-brand b {
@@ -540,7 +570,8 @@ img {
   padding: clamp(48px, 7vw, 96px) clamp(20px, 7vw, 112px);
   overflow: hidden;
   background: var(--ink) url("/images/smash-burger.jpg") center 52% / cover no-repeat;
-  background-image: image-set(url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
+  background-image: -webkit-image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
+  background-image: image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
   color: var(--white);
 }
 
@@ -554,10 +585,13 @@ img {
 
 .hero-feature-copy {
   max-width: 760px;
+  padding: clamp(20px, 3vw, 36px);
+  background: #0b2938;
 }
 
 .hero-feature-kicker {
   margin: 0 0 17px;
+  background: #0b2938;
   color: var(--gold);
   text-transform: uppercase;
   letter-spacing: .16em;
@@ -567,6 +601,7 @@ img {
 
 .hero-feature h1 {
   margin: 0;
+  background: #0b2938;
   font-family: var(--display);
   font-size: clamp(62px, 8.5vw, 132px);
   letter-spacing: var(--display-tracking);
@@ -575,6 +610,7 @@ img {
 }
 
 .hero-feature h1 em {
+  background: #0b2938;
   color: var(--gold);
   font-style: normal;
 }
@@ -582,9 +618,15 @@ img {
 .hero-feature-copy > p:not(.hero-feature-kicker) {
   max-width: 430px;
   margin: 25px 0 27px;
+  background: #0b2938;
   color: var(--ink-muted);
   font-size: 17px;
   line-height: 1.45;
+}
+
+.hero-feature-copy > .button {
+  background: #0b2938;
+  color: var(--white);
 }
 
 .hero-feature-stamp {
@@ -708,7 +750,7 @@ img {
   align-items: center;
   gap: 10px;
   margin: 0 0 22px;
-  color: var(--red);
+  color: var(--red-dark);
   text-transform: uppercase;
   letter-spacing: .16em;
   font-size: 11px;
@@ -1129,7 +1171,7 @@ img {
 .menu-redesign {
   padding: clamp(75px, 9vw, 140px) clamp(20px, 5vw, 76px) 0;
   background: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), url("/images/chilli-dog-combo.jpg") center 24% / cover no-repeat;
-  background-image: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), image-set(url("/images/chilli-dog-combo.webp") type("image/webp"), url("/images/chilli-dog-combo.jpg") type("image/jpeg"));
+  background-image: linear-gradient(180deg, #dfceb0d1 0%, #dfceb0ed 58%, #dfceb0fa 100%), -webkit-image-set(url("/images/chilli-dog-combo.webp") type("image/webp"), url("/images/chilli-dog-combo.jpg") type("image/jpeg"));
   scroll-margin-top: 80px;
 }
 
@@ -1140,6 +1182,8 @@ img {
   align-items: end;
   gap: 60px;
   margin: 0 auto 52px;
+  padding: 22px clamp(20px, 3vw, 34px) 24px;
+  background: var(--paper);
 }
 
 .section-intro h2 {
@@ -1437,7 +1481,7 @@ img {
   right: 3px;
   top: 3px;
   padding: 3px 4px;
-  background: #171111e8;
+  background: #171111;
   color: var(--gold);
   text-align: center;
   text-transform: uppercase;
@@ -1573,7 +1617,8 @@ body.menu-lightbox-open {
   align-items: center;
   gap: 18px;
   margin: 0 auto;
-  padding: 35px 0 44px;
+  padding: 35px 22px 44px;
+  background: var(--paper);
   color: var(--red-dark);
   text-transform: uppercase;
   letter-spacing: .1em;
@@ -1612,7 +1657,7 @@ body.menu-lightbox-open {
   gap: clamp(30px, 6vw, 95px);
   padding: clamp(75px, 9vw, 135px) clamp(20px, 7vw, 112px);
   background: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), url("/images/fish-and-chips.jpg") center 38% / cover no-repeat;
-  background-image: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), image-set(url("/images/fish-and-chips.webp") type("image/webp"), url("/images/fish-and-chips.jpg") type("image/jpeg"));
+  background-image: linear-gradient(90deg, #392861ed 0%, #392861d9 48%, #392861a8 100%), -webkit-image-set(url("/images/fish-and-chips.webp") type("image/webp"), url("/images/fish-and-chips.jpg") type("image/jpeg"));
   color: var(--white);
   scroll-margin-top: 80px;
 }
@@ -1628,6 +1673,8 @@ body.menu-lightbox-open {
 
 .story-copy {
   align-self: start;
+  padding: clamp(20px, 3vw, 36px);
+  background: #392861;
 }
 
 .story-copy h2 em {
@@ -1691,6 +1738,8 @@ body.menu-lightbox-open {
   grid-column: 1 / -1;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0 20px;
+  padding: 0 22px;
+  background: #392861;
   border-top: 1px solid #ffffff57;
 }
 
@@ -1771,10 +1820,13 @@ body.menu-lightbox-open {
   left: clamp(20px, 5vw, 76px);
   display: grid;
   gap: 2px;
+  padding: 12px 15px 14px;
+  background: var(--ink);
   text-transform: uppercase;
 }
 
 .visit-image-label span {
+  background: var(--ink);
   color: var(--gold);
   letter-spacing: .15em;
   font-size: 11px;
@@ -1782,6 +1834,7 @@ body.menu-lightbox-open {
 }
 
 .visit-image-label strong {
+  background: var(--ink);
   font-family: var(--display);
   font-size: 55px;
   letter-spacing: var(--display-tracking);
@@ -1883,13 +1936,15 @@ body.menu-lightbox-open {
   gap: clamp(35px, 7vw, 100px);
   padding: clamp(70px, 9vw, 130px) clamp(20px, 7vw, 112px);
   background: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), url("/images/loaded-nachos.jpg") center 55% / cover no-repeat;
-  background-image: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), image-set(url("/images/loaded-nachos.webp") type("image/webp"), url("/images/loaded-nachos.jpg") type("image/jpeg"));
+  background-image: linear-gradient(90deg, #fbc525ed 0%, #fbc525d9 48%, #fbc525a8 100%), -webkit-image-set(url("/images/loaded-nachos.webp") type("image/webp"), url("/images/loaded-nachos.jpg") type("image/jpeg"));
   color: var(--ink);
   scroll-margin-top: 80px;
 }
 
 .catering-display {
   align-self: center;
+  padding: clamp(22px, 3vw, 36px);
+  background: var(--gold);
 }
 
 .catering-display h2 {
@@ -2184,6 +2239,7 @@ footer.site-footer {
 .site-footer__phone span,
 .site-footer__bottom-links a span {
   color: var(--brand-accent);
+  background: var(--brand-bg);
 }
 
 .site-footer__nav a:hover,
@@ -2276,7 +2332,7 @@ footer.site-footer {
 
 .site-footer__bottom-left .site-credit {
   width: fit-content;
-  color: color-mix(in srgb, var(--brand-muted) 72%, transparent);
+  color: rgba(255, 246, 229, .72);
   font-size: 9px;
   letter-spacing: .06em;
   text-transform: none;
@@ -2860,7 +2916,8 @@ footer.site-footer {
 }
 
 .google-review-ticker-label i {
-  color: var(--red);
+  color: var(--ink);
+  background: var(--gold);
   font-size: 11px;
   font-style: normal;
   letter-spacing: -1px;
@@ -2901,7 +2958,7 @@ footer.site-footer {
 }
 
 .google-review-ticker-track > span {
-  color: var(--red);
+  color: var(--red-dark);
   font-family: var(--display);
   font-size: 15px;
   font-style: normal;

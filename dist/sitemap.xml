@@ -7,19 +7,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/privacy.html</loc>
+    <loc>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/privacy</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/terms.html</loc>
+    <loc>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/terms</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/cookies.html</loc>
+    <loc>https://bigg-dogg-listowel.mrbraddavidson.workers.dev/cookies</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

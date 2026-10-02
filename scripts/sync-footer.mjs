@@ -55,8 +55,16 @@ for (const relativePath of ["index.html", "404.html", "privacy.html", "terms.htm
   await copyFile(path, join(root, "dist", relativePath));
 }
 
+for (const relativePath of ["privacy.html", "terms.html", "cookies.html"]) {
+  const cleanPath = relativePath.replace(/\.html$/, "");
+  await copyFile(join(root, "dist", relativePath), join(root, "dist", cleanPath));
+}
+
 await copyFile(join(root, "styles.css"), join(root, "dist", "styles.css"));
 await copyFile(join(root, "theme.css"), join(root, "dist", "theme.css"));
 await copyFile(join(root, "cookie-consent.js"), join(root, "dist", "cookie-consent.js"));
 await copyFile(join(root, "menu-lightbox.js"), join(root, "dist", "menu-lightbox.js"));
+await copyFile(join(root, "sitemap.xml"), join(root, "dist", "sitemap.xml"));
+await copyFile(join(root, "manifest.webmanifest"), join(root, "dist", "manifest.webmanifest"));
+await copyFile(join(root, "_headers"), join(root, "dist", "_headers"));
 console.log("Synced partials/site-footer.html into root and dist HTML routes.");

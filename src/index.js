@@ -4,18 +4,74 @@ const FEED_LIMIT = "6";
 
 const STATIC_SECURITY_HEADERS = {
   "X-Content-Type-Options": "nosniff",
-  "X-Frame-Options": "SAMEORIGIN",
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Permissions-Policy": "camera=(), geolocation=(), microphone=()",
-  "Content-Security-Policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'",
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
 };
 
-function withStaticHeaders(response) {
+const DOCUMENT_SECURITY_HEADERS = {
+  "Content-Security-Policy": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://davidsondigitaldesign.com https://www.davidsondigitaldesign.com https://davidsondigitaldesign.pages.dev; img-src 'self' https://*.fbcdn.net https://*.facebook.com https://*.fbsbx.com; style-src 'self'; script-src 'self'; object-src 'none'; connect-src 'self'; font-src 'self'",
+};
+
+const IMMUTABLE_ASSET_PATTERN = /\.(?:avif|css|gif|ico|jpeg|jpg|js|png|svg|webp|woff2?)$/i;
+const CLEAN_DOCUMENT_PATHS = new Map([
+  ["/privacy", "/privacy.html"],
+  ["/terms", "/terms.html"],
+  ["/cookies", "/cookies.html"],
+]);
+const LEGACY_DOCUMENT_PATHS = new Map([
+  ["/privacy.html", "/privacy"],
+  ["/terms.html", "/terms"],
+  ["/cookies.html", "/cookies"],
+]);
+
+function getStaticCacheControl(pathname) {
+  if (IMMUTABLE_ASSET_PATTERN.test(pathname)) {
+    return "public, max-age=31536000, immutable";
+  }
+  if (/\.(?:md|txt|xml|webmanifest|json)$|^\/robots\.txt$|^\/sitemap\.xml$/i.test(pathname)) {
+    return "public, max-age=86400, stale-while-revalidate=604800";
+  }
+  return "public, max-age=180, s-maxage=3600, stale-while-revalidate=86400";
+}
+
+function addVaryValue(headers, value) {
+  const values = new Set((headers.get("Vary") || "").split(",").map((item) => item.trim()).filter(Boolean));
+  values.add(value);
+  headers.set("Vary", [...values].join(", "));
+}
+
+function addUtf8Charset(headers, pathname = "") {
+  const contentType = headers.get("Content-Type");
+  if (!contentType || /charset=/i.test(contentType)) return;
+  if (/\.(?:m?js)$/i.test(pathname)) {
+    headers.set("Content-Type", "application/javascript; charset=utf-8");
+    return;
+  }
+  if (/^text\//i.test(contentType) || /^(?:application|image)\/(?:javascript|json|manifest\+json|xml|svg\+xml)/i.test(contentType)) {
+    headers.set("Content-Type", `${contentType}; charset=utf-8`);
+  }
+}
+
+function isDocumentPath(pathname) {
+  return pathname === "/" || pathname.endsWith(".html") || CLEAN_DOCUMENT_PATHS.has(pathname);
+}
+
+function withStaticHeaders(response, pathname = "/", document = isDocumentPath(pathname)) {
   const headers = new Headers(response.headers);
   for (const [name, value] of Object.entries(STATIC_SECURITY_HEADERS)) {
     headers.set(name, value);
   }
+  if (document) {
+    for (const [name, value] of Object.entries(DOCUMENT_SECURITY_HEADERS)) {
+      headers.set(name, value);
+    }
+  } else {
+    headers.delete("Content-Security-Policy");
+  }
+  addUtf8Charset(headers, pathname);
+  addVaryValue(headers, "Accept-Encoding");
+  headers.set("Cache-Control", getStaticCacheControl(pathname));
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
@@ -35,7 +91,7 @@ async function markdownResponse(request, env) {
     status: markdownResponse.status,
     statusText: markdownResponse.statusText,
     headers,
-  }));
+  }), "/index.md", true);
 }
 
 function jsonResponse(payload, status, cacheControl = "no-store") {
@@ -147,7 +203,31 @@ export default {
     if (request.method === "GET" && url.pathname === "/" && (request.headers.get("Accept") || "").toLowerCase().includes("text/markdown")) {
       return markdownResponse(request, env);
     }
-    const assetResponse = await env.ASSETS.fetch(request);
-    return withStaticHeaders(assetResponse);
+    const legacyDocumentPath = LEGACY_DOCUMENT_PATHS.get(url.pathname);
+    if (request.method === "GET" && legacyDocumentPath) {
+      const redirectUrl = new URL(legacyDocumentPath, request.url);
+      redirectUrl.search = url.search;
+      return withStaticHeaders(new Response(null, {
+        status: 301,
+        headers: { Location: redirectUrl.toString() },
+      }), url.pathname);
+    }
+    const cleanDocumentPath = CLEAN_DOCUMENT_PATHS.get(url.pathname);
+    const assetRequest = cleanDocumentPath
+      ? new Request(new URL(cleanDocumentPath, request.url), request)
+      : request;
+    const assetResponse = await env.ASSETS.fetch(assetRequest);
+    const staticResponse = withStaticHeaders(assetResponse, url.pathname);
+    if ((cleanDocumentPath || url.pathname.endsWith(".html")) && staticResponse.ok) {
+      const headers = new Headers(staticResponse.headers);
+      headers.set("Content-Type", "text/html; charset=utf-8");
+      headers.set("Cache-Control", getStaticCacheControl(url.pathname));
+      return new Response(staticResponse.body, {
+        status: staticResponse.status,
+        statusText: staticResponse.statusText,
+        headers,
+      });
+    }
+    return staticResponse;
   },
 };
