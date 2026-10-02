@@ -616,6 +616,11 @@ img {
   }
 
   .hero-feature h1 {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(50px, 5.2vw, 80px);
+    letter-spacing: .01em;
+    word-spacing: .02em;
+    line-height: .98;
     white-space: nowrap;
   }
 }
