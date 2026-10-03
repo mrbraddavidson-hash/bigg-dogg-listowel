@@ -50,7 +50,7 @@
         "@id": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#restaurant",
         "name": "BIGG DOGG",
         "alternateName": ["Bigg Dogg Street Eats", "BIGG DOGG Listowel"],
-        "description": "BIGG DOGG is a food truck in Listowel, Ontario serving original smash burgers, freshly battered haddock, poutine, loaded fries and street eats.",
+        "description": "A food truck in Listowel, Ontario serving original smash burgers, freshly battered haddock, poutine, loaded fries and street eats.",
         "url": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/",
         "logo": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/images/bigg-dogg-logo.webp",
         "image": [
@@ -101,7 +101,7 @@
       {
         "@type": "Menu",
         "@id": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#menu-schema",
-        "name": "BIGG DOGG menu",
+        "name": "Listowel street eats menu",
         "url": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#menu",
         "inLanguage": "en-CA",
         "hasMenuSection": [
@@ -212,7 +212,15 @@
         "name": "BIGG DOGG",
         "alternateName": "Bigg Dogg Listowel",
         "publisher": {"@id": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#restaurant"},
-        "inLanguage": "en-CA"
+        "inLanguage": "en-CA",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/?search_term_string={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "WebPage",
@@ -231,21 +239,21 @@
         "@type": "FAQPage",
         "@id": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#faq",
         "url": "https://bigg-dogg-listowel.mrbraddavidson.workers.dev/#questions",
-        "name": "BIGG DOGG Listowel frequently asked questions",
+        "name": "Listowel food truck frequently asked questions",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Where is BIGG DOGG in Listowel?",
-            "acceptedAnswer": {"@type": "Answer", "text": "BIGG DOGG parks in the Canadian Tire parking lot at 500 Mitchell Road South, Listowel, Ontario N4W 0C8."}
+            "name": "Where is the food truck in Listowel?",
+            "acceptedAnswer": {"@type": "Answer", "text": "The truck parks in the Canadian Tire parking lot at 500 Mitchell Road South, Listowel, Ontario N4W 0C8."}
           },
           {
             "@type": "Question",
-            "name": "When is BIGG DOGG open?",
-            "acceptedAnswer": {"@type": "Answer", "text": "BIGG DOGG is open Monday through Saturday from 11 AM to 7 PM and closed Sunday. Hours can change, so check Facebook or call before visiting."}
+            "name": "When is the food truck open?",
+            "acceptedAnswer": {"@type": "Answer", "text": "The truck is open Monday through Saturday from 11 AM to 7 PM and closed Sunday. Hours can change, so check Facebook or call before visiting."}
           },
           {
             "@type": "Question",
-            "name": "What is on the BIGG DOGG menu?",
+            "name": "What is on the menu?",
             "acceptedAnswer": {"@type": "Answer", "text": "The menu includes the Original Smash Burger, freshly battered haddock fish and chips, hot dogs, chilli dogs, sausages, loaded fries, loaded nachos, poutine, chicken tenders, battered mushrooms and onion rings."}
           },
           {
@@ -255,8 +263,8 @@
           },
           {
             "@type": "Question",
-            "name": "Does BIGG DOGG cater?",
-            "acceptedAnswer": {"@type": "Answer", "text": "BIGG DOGG can discuss work lunches, tournaments, parties and community events by text at 647-679-5006."}
+            "name": "Does the food truck cater?",
+            "acceptedAnswer": {"@type": "Answer", "text": "The team can discuss work lunches, tournaments, parties and community events by text at 647-679-5006."}
           }
         ]
       }
@@ -291,7 +299,7 @@
         <a href="#find-us">Find the truck</a>
         <a href="#catering">Catering</a>
       </nav>
-      <a class="header-order" href="tel:+16476795006">
+      <a class="header-order" data-square-order-cta href="tel:+16476795006">
         <span>Call to order</span>
       </a>
     </header>
@@ -305,7 +313,9 @@
       </div>
       <div class="hero-feature-stamp hero-feature-stamp--real" aria-hidden="true"><picture><source type="image/webp" srcset="/images/smash-burger-real-cutout-320.webp 320w, /images/smash-burger-real-cutout.webp 640w" sizes="250px"><img src="/images/smash-burger-real-cutout-fallback-320.png" alt="" width="320" height="320"></picture></div>
     </section>
-    <section class="google-review-ticker" aria-label="Latest Google review highlights">
+    <!-- These public review excerpts are selected and moderated before being published. -->
+    <section class="google-review-ticker" aria-label="Moderated Google review highlights" data-review-source="google-business-profile" data-review-moderation="editorially-selected">
+      <p class="visually-hidden">These are selected excerpts from public Google reviews. Each excerpt links to the business listing.</p>
       <div class="google-review-ticker-label"><span>Google reviews</span><strong>4.9 <i>&#9733;&#9733;&#9733;&#9733;&#9733;</i></strong></div>
       <div class="google-review-ticker-window">
         <div class="google-review-ticker-track">
@@ -332,7 +342,15 @@
         </div>
         <div class="section-intro-side">
           <p>Start with the original, go crispy with haddock, or load it all up. Combos come with fries and a drink.</p>
-          <a class="text-link red-link" href="tel:+16476795006">Order by phone <b>↗</b></a>
+          <a class="text-link red-link" data-square-order-cta href="tel:+16476795006">Order by phone <b>↗</b></a>
+          <form class="menu-search" id="menu-search" action="/" method="get" role="search" data-menu-search toolname="search_menu" tooldescription="Searches the BIGG DOGG menu for food and drink items.">
+            <label for="menu-search-input">Search the menu</label>
+            <div class="menu-search__controls">
+              <input id="menu-search-input" name="search_term_string" type="search" placeholder="Search burgers, haddock or fries" autocomplete="off" toolparamdescription="A menu item or ingredient to find, such as burger, haddock, fries or onion rings.">
+              <button class="menu-search__submit" type="submit">Search</button>
+            </div>
+            <p class="menu-search__status" id="menu-search-status" data-menu-search-status aria-live="polite" hidden></p>
+          </form>
         </div>
       </div>
 
@@ -340,65 +358,65 @@
         <section class="price-list" aria-labelledby="single-item-menu-title">
           <h3 id="single-item-menu-title" class="visually-hidden">Single item menu</h3>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/smash-burger.webp" data-menu-lightbox-alt="BIGG DOGG original smash burger" aria-label="View original smash burger full screen"><picture><source type="image/avif" srcset="/images/smash-burger.avif" sizes="132px"><source type="image/webp" srcset="/images/smash-burger-320.webp 320w, /images/smash-burger.webp 720w" sizes="132px"><img src="/images/smash-burger-fallback.jpg" alt="BIGG DOGG original smash burger" width="720" height="720" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/smash-burger.webp" data-menu-lightbox-alt="original smash burger" aria-label="View original smash burger full screen"><picture><source type="image/avif" srcset="/images/smash-burger.avif" sizes="132px"><source type="image/webp" srcset="/images/smash-burger-320.webp 320w, /images/smash-burger.webp 720w" sizes="132px"><img src="/images/smash-burger-fallback.jpg" alt="original smash burger" width="720" height="720" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Home of the Original Smash Burger</h3><b>$9.50</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/hotdog.webp" data-menu-lightbox-alt="BIGG DOGG hot dog with fries" aria-label="View hot dog full screen"><picture><source type="image/avif" srcset="/images/hotdog.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/hotdog-320.webp 320w, /images/hotdog.webp 720w" sizes="132px"><img src="/images/hotdog-fallback.jpg" alt="BIGG DOGG hot dog with fries" width="720" height="720" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/hotdog.webp" data-menu-lightbox-alt="hot dog with fries" aria-label="View hot dog full screen"><picture><source type="image/avif" srcset="/images/hotdog.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/hotdog-320.webp 320w, /images/hotdog.webp 720w" sizes="132px"><img src="/images/hotdog-fallback.jpg" alt="hot dog with fries" width="720" height="720" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>HotDog</h3><b>$7.00</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/chilli-dog-combo.webp" data-menu-lightbox-alt="BIGG DOGG chilli dog with fries" aria-label="View chilli dog full screen"><picture><source type="image/avif" srcset="/images/chilli-dog-combo.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/chilli-dog-combo-320.webp 320w, /images/chilli-dog-combo.webp 720w" sizes="132px"><img src="/images/chilli-dog-combo-fallback.jpg" alt="BIGG DOGG chilli dog with fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/chilli-dog-combo.webp" data-menu-lightbox-alt="chilli dog with fries" aria-label="View chilli dog full screen"><picture><source type="image/avif" srcset="/images/chilli-dog-combo.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/chilli-dog-combo-320.webp 320w, /images/chilli-dog-combo.webp 720w" sizes="132px"><img src="/images/chilli-dog-combo-fallback.jpg" alt="chilli dog with fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Chilli Dog</h3><b>$8.00</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/fish-and-chips.webp" data-menu-lightbox-alt="BIGG DOGG freshly battered haddock fish and chips" aria-label="View haddock fish and chips full screen"><picture><source type="image/avif" srcset="/images/fish-and-chips.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/fish-and-chips-320.webp 320w, /images/fish-and-chips.webp 720w" sizes="132px"><img src="/images/fish-and-chips-fallback.jpg" alt="BIGG DOGG freshly battered haddock fish and chips" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/fish-and-chips.webp" data-menu-lightbox-alt="freshly battered haddock fish and chips" aria-label="View haddock fish and chips full screen"><picture><source type="image/avif" srcset="/images/fish-and-chips.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/fish-and-chips-320.webp 320w, /images/fish-and-chips.webp 720w" sizes="132px"><img src="/images/fish-and-chips-fallback.jpg" alt="freshly battered haddock fish and chips" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Freshly Battered Haddock Fish <small>6 oz / 1 pc</small></h3><b>$11.00</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image price-item-image--placeholder"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/sausage-placeholder.webp" data-menu-lightbox-alt="Placeholder photo of a sausage in a bun; replace with a BIGG DOGG sausage photo" aria-label="View sausages full screen"><picture><source type="image/avif" srcset="/images/sausage-placeholder.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/sausage-placeholder-320.webp 320w, /images/sausage-placeholder.webp 720w" sizes="132px"><img src="/images/sausage-placeholder-fallback.jpg" alt="Placeholder photo of a sausage in a bun; replace with a BIGG DOGG sausage photo" width="720" height="720" loading="lazy"></picture></button><span class="price-item-image-label">Placeholder</span></div>
+            <div class="price-item-image price-item-image--placeholder"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/sausage-placeholder.webp" data-menu-lightbox-alt="Placeholder photo of a sausage in a bun; replace with a food-truck sausage photo" aria-label="View sausages full screen"><picture><source type="image/avif" srcset="/images/sausage-placeholder.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/sausage-placeholder-320.webp 320w, /images/sausage-placeholder.webp 720w" sizes="132px"><img src="/images/sausage-placeholder-fallback.jpg" alt="Placeholder photo of a sausage in a bun; replace with a food-truck sausage photo" width="720" height="720" loading="lazy"></picture></button><span class="price-item-image-label">Placeholder</span></div>
             <div class="price-item-content"><h3>Sausages <small>Cajun / Polish / Octoberfest</small></h3><b>$8.00</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/loaded-fries-real.webp" data-menu-lightbox-alt="BIGG DOGG loaded fries" aria-label="View loaded fries full screen"><picture><source type="image/avif" srcset="/images/loaded-fries-real.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/loaded-fries-real-320.webp 320w, /images/loaded-fries-real.webp 720w" sizes="132px"><img src="/images/loaded-fries-real-fallback.jpg" alt="BIGG DOGG loaded fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/loaded-fries-real.webp" data-menu-lightbox-alt="loaded fries" aria-label="View loaded fries full screen"><picture><source type="image/avif" srcset="/images/loaded-fries-real.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/loaded-fries-real-320.webp 320w, /images/loaded-fries-real.webp 720w" sizes="132px"><img src="/images/loaded-fries-real-fallback.jpg" alt="loaded fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Loaded Fries</h3><b>$10.50</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/loaded-nachos.webp" data-menu-lightbox-alt="BIGG DOGG loaded nachos with peppers and jalapenos" aria-label="View loaded nachos full screen"><picture><source type="image/avif" srcset="/images/loaded-nachos.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/loaded-nachos-320.webp 320w, /images/loaded-nachos.webp 720w" sizes="132px"><img src="/images/loaded-nachos-fallback.jpg" alt="BIGG DOGG loaded nachos with peppers and jalapenos" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/loaded-nachos.webp" data-menu-lightbox-alt="loaded nachos with peppers and jalapenos" aria-label="View loaded nachos full screen"><picture><source type="image/avif" srcset="/images/loaded-nachos.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/loaded-nachos-320.webp 320w, /images/loaded-nachos.webp 720w" sizes="132px"><img src="/images/loaded-nachos-fallback.jpg" alt="loaded nachos with peppers and jalapenos" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Loaded Nachos</h3><b>$10.50</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/poutine-real.webp" data-menu-lightbox-alt="BIGG DOGG poutine with gravy and cheese curds" aria-label="View poutine full screen"><picture><source type="image/avif" srcset="/images/poutine-real.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/poutine-real-320.webp 320w, /images/poutine-real.webp 720w" sizes="132px"><img src="/images/poutine-real-fallback.jpg" alt="BIGG DOGG poutine with gravy and cheese curds" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/poutine-real.webp" data-menu-lightbox-alt="poutine with gravy and cheese curds" aria-label="View poutine full screen"><picture><source type="image/avif" srcset="/images/poutine-real.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/poutine-real-320.webp 320w, /images/poutine-real.webp 720w" sizes="132px"><img src="/images/poutine-real-fallback.jpg" alt="poutine with gravy and cheese curds" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Poutine</h3><b>$10.50</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/chicken-tenders.webp" data-menu-lightbox-alt="BIGG DOGG chicken tenders with fries" aria-label="View chicken tenders full screen"><picture><source type="image/avif" srcset="/images/chicken-tenders.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/chicken-tenders-320.webp 320w, /images/chicken-tenders.webp 720w" sizes="132px"><img src="/images/chicken-tenders-fallback.jpg" alt="BIGG DOGG chicken tenders with fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/chicken-tenders.webp" data-menu-lightbox-alt="chicken tenders with fries" aria-label="View chicken tenders full screen"><picture><source type="image/avif" srcset="/images/chicken-tenders.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/chicken-tenders-320.webp 320w, /images/chicken-tenders.webp 720w" sizes="132px"><img src="/images/chicken-tenders-fallback.jpg" alt="chicken tenders with fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Chicken Tenders <small>4 pcs</small></h3><b>$8.00</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/battered-mushrooms-social.webp" data-menu-lightbox-alt="BIGG DOGG battered mushrooms" aria-label="View battered mushrooms full screen"><picture><source type="image/avif" srcset="/images/battered-mushrooms-social.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/battered-mushrooms-social-320.webp 320w, /images/battered-mushrooms-social.webp 720w" sizes="132px"><img src="/images/battered-mushrooms-social-fallback.jpg" alt="BIGG DOGG battered mushrooms" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/battered-mushrooms-social.webp" data-menu-lightbox-alt="battered mushrooms" aria-label="View battered mushrooms full screen"><picture><source type="image/avif" srcset="/images/battered-mushrooms-social.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/battered-mushrooms-social-320.webp 320w, /images/battered-mushrooms-social.webp 720w" sizes="132px"><img src="/images/battered-mushrooms-social-fallback.jpg" alt="battered mushrooms" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Battered Mushrooms</h3><b>$8.00</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/onion-rings-listing.webp" data-menu-lightbox-alt="BIGG DOGG onion rings" aria-label="View onion rings full screen"><picture><source type="image/avif" srcset="/images/onion-rings-listing.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/onion-rings-listing-320.webp 320w, /images/onion-rings-listing.webp 720w" sizes="132px"><img src="/images/onion-rings-listing-fallback.jpg" alt="BIGG DOGG onion rings" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/onion-rings-listing.webp" data-menu-lightbox-alt="onion rings" aria-label="View onion rings full screen"><picture><source type="image/avif" srcset="/images/onion-rings-listing.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/onion-rings-listing-320.webp 320w, /images/onion-rings-listing.webp 720w" sizes="132px"><img src="/images/onion-rings-listing-fallback.jpg" alt="onion rings" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Onion Rings</h3><b>$8.50</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image price-item-image--placeholder"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/gravy-placeholder.webp" data-menu-lightbox-alt="Placeholder photo of brown gravy in a sauce cup; replace with a BIGG DOGG gravy photo" aria-label="View side of gravy full screen"><picture><source type="image/avif" srcset="/images/gravy-placeholder.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/gravy-placeholder-320.webp 320w, /images/gravy-placeholder.webp 720w" sizes="132px"><img src="/images/gravy-placeholder-fallback.jpg" alt="Placeholder photo of brown gravy in a sauce cup; replace with a BIGG DOGG gravy photo" width="720" height="720" loading="lazy"></picture></button><span class="price-item-image-label">Placeholder</span></div>
+            <div class="price-item-image price-item-image--placeholder"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/gravy-placeholder.webp" data-menu-lightbox-alt="Placeholder photo of brown gravy in a sauce cup; replace with a food-truck gravy photo" aria-label="View side of gravy full screen"><picture><source type="image/avif" srcset="/images/gravy-placeholder.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/gravy-placeholder-320.webp 320w, /images/gravy-placeholder.webp 720w" sizes="132px"><img src="/images/gravy-placeholder-fallback.jpg" alt="Placeholder photo of brown gravy in a sauce cup; replace with a food-truck gravy photo" width="720" height="720" loading="lazy"></picture></button><span class="price-item-image-label">Placeholder</span></div>
             <div class="price-item-content"><h3>Side of gravy</h3><b>$2.75</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image price-item-image--placeholder"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/drinks-placeholder.webp" data-menu-lightbox-alt="Placeholder photo of canned drinks and water; replace with a BIGG DOGG drink photo" aria-label="View pop or water full screen"><picture><source type="image/avif" srcset="/images/drinks-placeholder.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/drinks-placeholder-320.webp 320w, /images/drinks-placeholder.webp 720w" sizes="132px"><img src="/images/drinks-placeholder-fallback.jpg" alt="Placeholder photo of canned drinks and water; replace with a BIGG DOGG drink photo" width="720" height="720" loading="lazy"></picture></button><span class="price-item-image-label">Placeholder</span></div>
+            <div class="price-item-image price-item-image--placeholder"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/drinks-placeholder.webp" data-menu-lightbox-alt="Placeholder photo of canned drinks and water; replace with a food-truck drink photo" aria-label="View pop or water full screen"><picture><source type="image/avif" srcset="/images/drinks-placeholder.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/drinks-placeholder-320.webp 320w, /images/drinks-placeholder.webp 720w" sizes="132px"><img src="/images/drinks-placeholder-fallback.jpg" alt="Placeholder photo of canned drinks and water; replace with a food-truck drink photo" width="720" height="720" loading="lazy"></picture></button><span class="price-item-image-label">Placeholder</span></div>
             <div class="price-item-content"><h3>Pop / water</h3><b>$2.00</b></div>
           </article>
           <article class="price-item">
-            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/chilli-dog-combo.webp" data-menu-lightbox-alt="BIGG DOGG combo with food and fries" aria-label="View combo full screen"><picture><source type="image/avif" srcset="/images/chilli-dog-combo.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/chilli-dog-combo-320.webp 320w, /images/chilli-dog-combo.webp 720w" sizes="132px"><img src="/images/chilli-dog-combo-fallback.jpg" alt="BIGG DOGG combo with food and fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
+            <div class="price-item-image"><button class="menu-photo-view" type="button" data-menu-lightbox-src="/images/chilli-dog-combo.webp" data-menu-lightbox-alt="combo with food and fries" aria-label="View combo full screen"><picture><source type="image/avif" srcset="/images/chilli-dog-combo.avif 720w" sizes="132px"><source type="image/webp" srcset="/images/chilli-dog-combo-320.webp 320w, /images/chilli-dog-combo.webp 720w" sizes="132px"><img src="/images/chilli-dog-combo-fallback.jpg" alt="combo with food and fries" width="720" height="720" loading="lazy" decoding="async"></picture></button></div>
             <div class="price-item-content"><h3>Make it a combo</h3><b>$5.00</b></div>
           </article>
         </section>
         <p class="menu-note">Make any favourite a combo for $5.00. Prices are +tax and may change.</p>
       </div>
-      <div class="menu-bottom"><span>Ready when you are</span><strong>Order ahead from BIGG DOGG.</strong><a class="button button-yellow menu-bottom-order" href="tel:+16476795006">Call to order <b>↗</b></a></div>
+      <div class="menu-bottom"><span>Ready when you are</span><strong>Order ahead from the truck.</strong><a class="button button-yellow menu-bottom-order" data-square-order-cta href="tel:+16476795006">Call to order <b>↗</b></a></div>
     </section>
 
     <dialog class="menu-lightbox" data-menu-lightbox aria-label="Full-screen menu photo">
@@ -412,11 +430,11 @@
       <div class="story-copy">
         <h2>Small truck.<br><em>BIGG</em> heart.</h2>
         <p class="story-lede">Good food should feel like a local landmark.</p>
-        <p>BIGG DOGG is a locally owned family food truck serving hot, generous street eats in Listowel, Ontario. Fresh off the grill, friendly at the window and built for the neighbourhood.</p>
+        <p>This locally owned family food truck serves hot, generous street eats in Listowel, Ontario. Fresh off the grill, friendly at the window and built for the neighbourhood.</p>
       </div>
       <div class="story-visual">
         <figure class="story-photo">
-        <picture><source type="image/avif" srcset="/images/kitchen-cook.avif"><source type="image/webp" srcset="/images/kitchen-cook.webp"><img src="/images/kitchen-cook-fallback.jpg" alt="BIGG DOGG cook working the grill inside the food truck" width="1536" height="2048" loading="lazy"></picture>
+        <picture><source type="image/avif" srcset="/images/kitchen-cook.avif"><source type="image/webp" srcset="/images/kitchen-cook.webp"><img src="/images/kitchen-cook-fallback.jpg" alt="cook working the grill inside the food truck" width="1536" height="2048" loading="lazy"></picture>
           <figcaption>Fresh off the grill.</figcaption>
         </figure>
       </div>
@@ -429,12 +447,12 @@
 
     <section class="visit-redesign" id="find-us">
       <div class="visit-image">
-        <picture><source type="image/avif" srcset="/images/truck.avif"><source type="image/webp" srcset="/images/truck.webp"><img src="/images/truck-fallback.jpg" alt="BIGG DOGG truck with owner in Listowel" width="960" height="720" loading="lazy"></picture>
+        <picture><source type="image/avif" srcset="/images/truck.avif"><source type="image/webp" srcset="/images/truck.webp"><img src="/images/truck-fallback.jpg" alt="truck with owner in Listowel" width="960" height="720" loading="lazy"></picture>
         <div class="visit-image-label"><span>Parked in</span><strong>Listowel</strong></div>
       </div>
       <div class="visit-panel">
         <h2>Your next stop<br><em>is here.</em></h2>
-        <p class="visit-lede">Look for the BIGG truck in the Canadian Tire parking lot.</p>
+        <p class="visit-lede">Look for the food truck in the Canadian Tire parking lot.</p>
         <div class="visit-details">
           <div><span>Where</span><strong>Canadian Tire parking lot</strong><address>500 Mitchell Road South<br>Listowel, Ontario N4W 0C8</address></div>
           <div><span>When</span><strong>Monday – Saturday</strong><p>11 AM – 7 PM<br><i>Sunday · Closed</i></p></div>
@@ -446,7 +464,7 @@
     <section class="catering-redesign" id="catering">
       <div class="catering-display">
         <h2>Bring BIGG<br><em>to the crowd.</em></h2>
-        <p>Planning a work lunch, tournament, party or community event? Tell BIGG DOGG your date, headcount and location.</p>
+        <p>Planning a work lunch, tournament, party or community event? Tell the team your date, headcount and location.</p>
       </div>
       <div class="catering-card">
         <div class="catering-card-top"><span>Group service</span><strong>Start with a quick text.</strong></div>
@@ -464,15 +482,15 @@
       </div>
       <div class="faq-list">
         <details open>
-          <summary>Where is BIGG DOGG in Listowel?</summary>
-          <p>BIGG DOGG parks in the Canadian Tire parking lot at 500 Mitchell Road South, Listowel, Ontario N4W 0C8. <a href="https://www.google.com/maps/dir/?api=1&amp;destination=BIGG+DOGG+500+Mitchell+Rd+S+Listowel+ON" target="_blank" rel="noopener noreferrer">Get directions</a>.</p>
+          <summary>Where is the food truck in Listowel?</summary>
+          <p>The truck parks in the Canadian Tire parking lot at 500 Mitchell Road South, Listowel, Ontario N4W 0C8. <a href="https://www.google.com/maps/dir/?api=1&amp;destination=BIGG+DOGG+500+Mitchell+Rd+S+Listowel+ON" target="_blank" rel="noopener noreferrer">Get directions</a>.</p>
         </details>
         <details>
-          <summary>When is BIGG DOGG open?</summary>
-          <p>BIGG DOGG is open Monday through Saturday from 11 AM to 7 PM and closed Sunday. Hours can change, so check the Facebook page or call before you head out.</p>
+          <summary>When is the food truck open?</summary>
+          <p>The truck is open Monday through Saturday from 11 AM to 7 PM and closed Sunday. Hours can change, so check the Facebook page or call before you head out.</p>
         </details>
         <details>
-          <summary>What is on the BIGG DOGG menu?</summary>
+          <summary>What is on the menu?</summary>
           <p>The menu includes the Original Smash Burger, freshly battered haddock fish and chips, hot dogs, chilli dogs, sausages, loaded fries, loaded nachos, poutine, chicken tenders, battered mushrooms and onion rings.</p>
         </details>
         <details>
@@ -480,8 +498,8 @@
           <p>Call <a href="tel:+16476795006">647-679-5006</a> to order ahead. Combos come with fries and a drink, and any favourite can be made a combo for $5.00. Prices are plus tax and may change.</p>
         </details>
         <details>
-          <summary>Does BIGG DOGG cater?</summary>
-          <p>Yes. BIGG DOGG can discuss work lunches, tournaments, parties and community events. <a href="sms:+16476795006?&amp;body=Hi%20BIGG%20DOGG%2C%20I%27d%20like%20to%20ask%20about%20catering.">Text about catering</a> with your date, headcount and location.</p>
+          <summary>Does the food truck cater?</summary>
+          <p>Yes. The team can discuss work lunches, tournaments, parties and community events. <a href="sms:+16476795006?&amp;body=Hi%20BIGG%20DOGG%2C%20I%27d%20like%20to%20ask%20about%20catering.">Text about catering</a> with your date, headcount and location.</p>
         </details>
       </div>
     </section>
@@ -544,7 +562,7 @@
   </div>
 </footer>
 <!-- site-footer:end -->
-    <nav class="mobile-bar" aria-label="Quick actions"><a href="tel:+16476795006">Call to order</a><a href="#menu">View menu</a></nav>
+    <nav class="mobile-bar" aria-label="Quick actions"><a data-square-order-cta href="tel:+16476795006">Call to order</a><a href="#menu">View menu</a></nav>
   </main>
   <!-- cookie-banner:start -->
 <aside class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie notice" hidden>
@@ -559,6 +577,7 @@
 </aside>
 <!-- cookie-banner:end -->
   <script src="/menu-lightbox.js?v=menu-pop-3" defer></script>
+  <script src="/menu-search.js?v=menu-search-1" defer></script>
   <script src="/cookie-consent.js" defer></script>
 </body>
 </html>
