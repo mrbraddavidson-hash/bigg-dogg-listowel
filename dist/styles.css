@@ -118,12 +118,14 @@
 }
 
 .cookie-banner__copy p {
+  position: relative;
+  z-index: 1;
   max-width: 690px;
   margin: 0;
   color: var(--brand-muted);
   background: var(--brand-bg);
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .cookie-banner__actions {
@@ -316,13 +318,13 @@
 
 @media (max-width: 850px) {
   .cookie-banner {
-    bottom: 78px;
+    bottom: 90px;
     display: block;
   }
 
   .cookie-banner__actions {
     justify-content: space-between;
-    margin-top: 14px;
+    margin-top: 15px;
   }
 
   .legal-header,
@@ -569,18 +571,10 @@ img {
   align-items: flex-end;
   padding: clamp(48px, 7vw, 96px) clamp(20px, 7vw, 112px);
   overflow: hidden;
-  background: var(--ink) url("/images/smash-burger.jpg") center 52% / cover no-repeat;
-  background-image: -webkit-image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
-  background-image: image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
+  background: linear-gradient(90deg, #0b2938ed 0%, #0b2938ba 31%, #0b293852 62%, #0b293840 100%), linear-gradient(0deg, #0b293899 0%, #0b293800 42%), var(--ink) url("/images/smash-burger.jpg") center 52% / cover no-repeat;
+  background-image: linear-gradient(90deg, #0b2938ed 0%, #0b2938ba 31%, #0b293852 62%, #0b293840 100%), linear-gradient(0deg, #0b293899 0%, #0b293800 42%), -webkit-image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
+  background-image: linear-gradient(90deg, #0b2938ed 0%, #0b2938ba 31%, #0b293852 62%, #0b293840 100%), linear-gradient(0deg, #0b293899 0%, #0b293800 42%), image-set(url("/images/smash-burger.avif") type("image/avif"), url("/images/smash-burger.webp") type("image/webp"), url("/images/smash-burger.jpg") type("image/jpeg"));
   color: var(--white);
-}
-
-.hero-feature::before {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  inset: 0;
-  background: linear-gradient(90deg, #0b2938ed 0%, #0b2938ba 31%, #0b293852 62%, #0b293840 100%), linear-gradient(0deg, #0b293899 0%, #0b293800 42%);
 }
 
 .hero-feature-copy {
@@ -624,7 +618,7 @@ img {
     font-size: clamp(52px, 5.5vw, 84px);
     letter-spacing: .01em;
     word-spacing: .02em;
-    line-height: .98;
+    line-height: 1.14;
     white-space: nowrap;
   }
 }
@@ -1212,7 +1206,7 @@ img {
   font-family: var(--display);
   font-size: clamp(67px, 9vw, 135px);
   letter-spacing: var(--display-tracking);
-  line-height: .84;
+  line-height: .9;
   text-transform: uppercase;
 }
 
@@ -1893,11 +1887,12 @@ body.menu-lightbox-open {
   overflow: hidden;
 }
 
-.visit-image::after {
+.visit-image-shade {
   position: absolute;
-  content: "";
+  z-index: 0;
   inset: 0;
   background: linear-gradient(180deg, #0000 45%, #000a);
+  pointer-events: none;
 }
 
 .visit-image img {
@@ -1937,7 +1932,8 @@ body.menu-lightbox-open {
   font-family: var(--display);
   font-size: 55px;
   letter-spacing: var(--display-tracking);
-  line-height: .8;
+  line-height: 1.2;
+  padding: 1px 0;
 }
 
 .visit-panel {
@@ -2704,6 +2700,7 @@ footer.site-footer {
     letter-spacing: .02em;
     word-spacing: .02em;
     line-height: .92;
+    padding-top: 20px;
   }
 
   .hero-feature-copy > p:not(.hero-feature-kicker) {
@@ -3019,12 +3016,12 @@ footer.site-footer {
   letter-spacing: 0;
 }
 
-.google-review-ticker-label i {
+.google-review-ticker-label .review-stars {
+  display: block;
+  flex: 0 0 auto;
+  width: 41px;
+  height: 12px;
   color: var(--ink);
-  background-color: var(--gold);
-  font-size: 11px;
-  font-style: normal;
-  letter-spacing: -1px;
 }
 
 .google-review-ticker-window {
