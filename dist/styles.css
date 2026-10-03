@@ -1272,23 +1272,11 @@ img {
 
 .menu-search__submit {
   flex: 0 0 auto;
-  min-height: 44px;
-  padding: 10px 16px;
-  border: 2px solid var(--red);
-  border-radius: 3px;
-  background: var(--ink);
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  font: inherit;
-  font-size: 10px;
-  font-weight: 950;
   cursor: pointer;
 }
 
 .menu-search__submit:hover {
-  background: var(--gold);
-  color: var(--ink);
+  transform: translateY(-2px);
 }
 
 .menu-search__status {
