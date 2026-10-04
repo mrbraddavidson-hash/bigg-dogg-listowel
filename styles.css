@@ -2699,9 +2699,9 @@ footer.site-footer {
 
   .hero-feature-stamp {
     top: auto;
-    right: -8px;
-    bottom: 8px;
-    z-index: 2;
+    right: -12px;
+    bottom: 4px;
+    z-index: 4;
     width: clamp(132px, 37vw, 154px);
     height: clamp(116px, 33vw, 138px);
   }
