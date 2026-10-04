@@ -2698,11 +2698,12 @@ footer.site-footer {
   }
 
   .hero-feature-stamp {
-    top: 18px;
-    right: 14px;
-    bottom: auto;
-    width: 101px;
-    height: 101px;
+    top: auto;
+    right: -8px;
+    bottom: 8px;
+    z-index: 2;
+    width: clamp(132px, 37vw, 154px);
+    height: clamp(116px, 33vw, 138px);
   }
 
   .hero-redesign {
